@@ -10,17 +10,15 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
 
-        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
         <style>
             body {
-                padding-top: 60px;
-                padding-bottom: 40px;
+                padding-top: 84px;
+                padding-bottom: 50px;
             }
         </style>
-        <link rel="stylesheet" href="css/bootstrap-responsive.min.css">
-        <link rel="stylesheet" href="css/idangerous.swiper.css">
+        <link rel="stylesheet" href="css/bootstrap-responsive.css">
         <link rel="stylesheet" href="css/main.css">
-
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
@@ -30,27 +28,30 @@
         <![endif]-->
 		
 		<!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
-        <div class="navbar navbar-inverse navbar-fixed-top">
+        <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-inner">
                 <div class="container">
+					<div class="logo">
+						<img src="img/logo.png">
+					</div>
+
                     <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </a>
-                    <a class="brand" href="#">Project</a>
                     <div class="nav-collapse collapse">
-                        <ul class="nav">
+                        <ul class="nav pull-right">
                             <li class="dropdown">
-                                <a href="#" class="dropdown-toggle" data-toggle="dropdown">Works<b class="caret"></b></a>
-                                <ul class="dropdown-menu">
+								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Works<b class="caret"></b></a>
+								<ul class="dropdown-menu">
 									<li class="active"><a href="#">2D</a></li>
 									<li><a href="#">3D</a></li>
 									<li><a href="#">Illustration</a></li>
 									<li><a href="#">Web Design</a></li>
 									<li><a href="#">Print Media</a></li>
 									<li><a href="#">Graphic Design</a></li>
-                                </ul>
+								</ul>
                             </li>
 							<li><a href="#about">About</a></li>
                             <li><a href="#contact">Contact</a></li>
@@ -58,10 +59,15 @@
                     </div><!--/.nav-collapse -->
                 </div>
             </div>
-        </div>
+        </nav>
 
-        <div class="container">
+        <div class="container-fluid">
 
+<!--
+	background: #f9fafa
+	color: #221e1f
+	other color: #fff
+-->
 			<!-- start gallery -->
 			<div class="gallery_wrapper"> 
 				<a class="arrow-left" href="#"></a> 
@@ -86,16 +92,101 @@
 					  </div>
 					</div>
 				</div>
-			</div>
+				
+				<section>
+					<div class="descr">
+						<b>Project:</b> CMC Studios exhibition
+					</div>
+					<div class="info">
+						<b>Info:</b> 2013
+					</div>
+				</section>
+			</div><!-- /gallery -->
 
             <hr class="buffer"/>
 
-            <footer>
-                <p>&copy; CMC 2013</p>
-            </footer>
+			<!-- start gallery -->
+			<div class="gallery_wrapper"> 
+				<a class="arrow-left" href="#"></a> 
+				<a class="arrow-right" href="#"></a>
+				<div class="swiper-container swiper2">
+					<div class="swiper-wrapper">
+					  <div class="swiper-slide blue-slide">
+						<h2>Slide 1</h2>
+						<p>first</p>
+					  </div>
+					  <div class="swiper-slide red-slide">
+						<h2>Slide 2</h2>
+						<p>next</p>
+					  </div>
+					  <div class="swiper-slide orange-slide">
+						<h2>Slide 4</h2>
+						<p>The last one</p>
+					  </div>
+					  <div class="swiper-slide green-slide">
+						<h2>Slide 5</h2>
+						<p>The last one</p>
+					  </div>
+					</div>
+				</div>
+				
+				<section>
+					<div class="descr">
+						<b>Project:</b> CMC Studios exhibition
+					</div>
+					<div class="info">
+						<b>Info:</b> 2013
+					</div>
+				</section>
+			</div><!-- /gallery -->
+
+            <hr class="buffer"/>
+
+			<!-- start gallery -->
+			<div class="gallery_wrapper"> 
+				<a class="arrow-left" href="#"></a> 
+				<a class="arrow-right" href="#"></a>
+				<div class="swiper-container swiper3">
+					<div class="swiper-wrapper">
+					  <div class="swiper-slide blue-slide">
+						<h2>Slide 1</h2>
+						<p>first</p>
+					  </div>
+					  <div class="swiper-slide red-slide">
+						<h2>Slide 2</h2>
+						<p>next</p>
+					  </div>
+					  <div class="swiper-slide orange-slide">
+						<h2>Slide 4</h2>
+						<p>The last one</p>
+					  </div>
+					  <div class="swiper-slide green-slide">
+						<h2>Slide 5</h2>
+						<p>The last one</p>
+					  </div>
+					</div>
+				</div>
+				
+				<section>
+					<div class="descr">
+						<b>Project:</b> CMC Studios exhibition
+					</div>
+					<div class="info">
+						<b>Info:</b> 2013
+					</div>
+				</section>
+			</div><!-- /gallery -->
+
+            <hr class="buffer"/>
+
+
 
         </div> <!-- /container -->
 
+		<footer>
+			<p>&copy; CMC 2013</p>
+		</footer>
+		
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 

@@ -10,6 +10,10 @@ $(function(){
 		loop:true,
 		grabCursor: true
 	});
+	var swiper = new Swiper('.swiper3', {
+		loop:true,
+		grabCursor: true
+	});
 	//Navigation arrows
 	$('.arrow-left').click(function(e) {
         e.preventDefault()
