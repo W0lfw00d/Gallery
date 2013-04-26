@@ -1,19 +1,15 @@
 /* ==========================================================================
    Author's custom styles
    ========================================================================== */
-
+*{
+	
+}
 /* first lets set everything to max height*/
 body, html {
 	height: 100%;
+	background-color: #f7f7f8;
 }
-/*
-.gallery_wrapper, .swiper-container, .swiper-wrapper {
-	height: 80%;
-}
-*/
-hr.buffer {
-	height: 10%;
-}
+
 a, a:visited {
     text-decoration: none;
 	color: #666;
@@ -52,13 +48,15 @@ header {
 	margin: 0 auto;
 }
 .navbar-inverse .navbar-inner {
-	background: #f7f7f8;
+	background: #fff;
 	border: 0;
 	height: 82px;
 	z-index: 2;
 }
 .nav {
-	padding-top: 20px;
+	padding-top: 21px;
+	position: fixed;
+	top:0;
 }
 .navbar-inverse .nav > li > a:focus, .navbar-inverse .nav > li > a:hover {
 	color: #999;
@@ -72,17 +70,41 @@ header {
 }
 /* Logo */
 .logo {
-	margin: 0px;
+	margin: 0 40px;
 	float: left;
 	width: 114px;
 	height: 82px;
+	/*background-image: url(../img/logo.png);*/
+}
+
+.nav-collapse.collapse {
+	margin-right: 35px;
 }
 
 .container-fluid {
-	padding-top: 30px;
-	min-height:100%;
+	width: 100%;
+	height: 100%;
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
 }
 
+.gallery {
+	-moz-box-sizing: border-box;
+	box-sizing: border-box;
+	text-align: center;
+	padding-top: 82px;
+	padding-bottom: 50px;
+	position: relative;
+	border:1px solid red;
+	height: 100%;
+}
+.swiper-container, .swiper-wrapper {
+	height: 100%;
+	
+}
+hr.buffer {
+	height: 10%;
+}
 
 /* Responsive Video 
 .video {
@@ -102,22 +124,49 @@ header {
 	height: 100%;
 }
 */
-
+.gallery_wrapper {
+	height: 90%;
+}
 /* Responsive Image */
 .gallery_wrapper img {
 	max-width: 100%;
 	height: auto;
+	max-height: 100%;
+	left:0;
+	right:0;
 }
-
-.gallery_wrapper .arrow-left {
-	background: url(img/arrows.png);
+/*
+.gallery_wrapper .arrow-left,
+.gallery_wrapper .arrow-right {
+	background: lightgrey url(../img/arrows.png);
 	height: 80%;
+	width: 20px;
+	border:1px solid black;
+	position:absolute;
 }
-
+*/
+/* Vertical center these objects */
+.arrow-left, .arrow-right {
+    bottom: 0;
+    margin: auto;
+    position: absolute;
+    top: 0;
+	width: 80px;
+	height: 126px;
+	z-index: 2;
+}
+.arrow-left {
+	background: transparent  url(../img/arrows.png) no-repeat left top;
+	left: 0;
+}
+.arrow-right {
+	background: transparent url(../img/arrows.png) no-repeat right top;
+	right: 0;
+}
 /* Swiper Styles */
 .swiper-container {
 	width:80%;
-	height:80%;
+	height:60%;
 	border:1px solid red;
 	margin:0 auto;
 	position:relative;
@@ -193,6 +242,17 @@ header {
 	background: #999;
 }
 
+.project_info {
+	width: 100%;
+	text-align: center;
+	height:10%;
+	clear:both;
+}
+.project_info div {
+	height: 50%;
+	box-sizing: border-box;
+	padding: 5px;
+}
 
 #footer {
 	text-align: left;
@@ -200,10 +260,13 @@ header {
 	width: 100%;
 	position: fixed;
 	bottom: 0;
-	background: #f7f7f8;
+	background: #fff;
 	z-index: 50;
 }
 
+.navbar .btn-navbar {
+	margin-top: 26px;
+}
 /* Lastly, apply responsive CSS fixes as necessary */
 @media (max-width: 767px) {
 	#footer {
@@ -212,4 +275,21 @@ header {
 		padding-left: 20px;
 		padding-right: 20px;
 	}
+}
+@media (max-width: 480px) {
+  .navbar-inverse .navbar-inner,
+  .logo {
+	height:40px;	
+  } 
+  .logo {
+	width:56px;
+	margin:0 20px;
+	background-image: url(../img/logo_mobile.png);
+  }
+  .nav {
+	padding-top:0
+  }
+  .navbar .btn-navbar {
+		margin-top: 5px;
+  }
 }

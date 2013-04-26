@@ -965,7 +965,7 @@
   }
   .navbar-fixed-top .navbar-inner,
   .navbar-fixed-bottom .navbar-inner {
-    padding: 5px;
+    padding: 0 5px;
   }
   .navbar .container {
     width: auto;
@@ -1084,11 +1084,13 @@
     border-bottom-color: #111111;
   }
   .navbar .nav-collapse .nav.pull-right {
-    float: none;
-    margin-left: 0;
+	background-color: white;
+	border: 1px solid;
+	width: 100%;
   }
   .nav-collapse,
   .nav-collapse.collapse {
+	z-index: 2;	  
     height: 0;
     overflow: hidden;
   }
