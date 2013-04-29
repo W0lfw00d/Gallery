@@ -75,7 +75,7 @@ header {
 	float: left;
 	width: 114px;
 	height: 82px;
-	background-image: url(../img/logo.png);
+	/*background-image: url(../img/logo.png);*/
 }
 
 .nav-collapse.collapse {
@@ -265,6 +265,17 @@ hr.buffer {
 	margin-top: 26px;
 }
 /* Lastly, apply responsive CSS fixes as necessary */
+@media (max-width: 979px) {
+	.navbar .btn-navbar {
+		margin-right: 40px;
+	}
+	.navbar-fixed-top {
+		position: fixed;
+	}
+	.nav-collapse.collapse {
+		margin-right:0;
+	}
+}
 @media (max-width: 767px) {
 	#footer {
 		margin-left: -20px;
@@ -281,7 +292,7 @@ hr.buffer {
   .logo {
 	width:56px;
 	margin:0 20px;
-	background-image: url(../img/logo_mobile.png);
+	/*background-image: url(../img/logo_mobile.png);*/
   }
   .nav {
 	padding-top:0
