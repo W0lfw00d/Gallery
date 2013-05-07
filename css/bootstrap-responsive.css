@@ -1029,8 +1029,13 @@
   .navbar-inverse .nav-collapse .nav > li > a:focus,
   .navbar-inverse .nav-collapse .dropdown-menu a:hover,
   .navbar-inverse .nav-collapse .dropdown-menu a:focus {
-    background-color: #111111;
+    background-color: #999;
 	color: #fff
+  }
+  .navbar-inverse .nav .active > a, 
+  .navbar-inverse .nav .active > a:hover, 
+  .navbar-inverse .nav .active > a:focus {
+	color: #fff;
   }
   .nav-collapse.in .btn-group {
     padding: 0;

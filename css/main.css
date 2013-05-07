@@ -75,7 +75,7 @@ header {
 	float: left;
 	width: 114px;
 	height: 82px;
-	/*background-image: url(../img/logo.png);*/
+	background-image: url(../img/logo.png);
 }
 
 .nav-collapse.collapse {
@@ -163,9 +163,8 @@ hr.buffer {
 }
 /* Swiper Styles */
 .swiper-container {
-	width:80%;
-	height:60%;
-	border:1px solid red;
+	width:100%;
+	height:100%;
 	margin:0 auto;
 	position:relative;
 	overflow:hidden;
@@ -220,8 +219,8 @@ hr.buffer {
 
 /* Specify Swiper's Size: */
 .swiper-container, .swiper-slide {
-	width: 80%;
-	height: 80%;
+	width: 100%;
+	height: 100%;
 }
 
 .red-slide {
@@ -292,7 +291,7 @@ hr.buffer {
   .logo {
 	width:56px;
 	margin:0 20px;
-	/*background-image: url(../img/logo_mobile.png);*/
+	background-image: url(../img/logo_mobile.png);
   }
   .nav {
 	padding-top:0

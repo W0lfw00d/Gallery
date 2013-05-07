@@ -11,12 +11,21 @@ $(function(){
 	var swiper2 = new Swiper('.swiper2', options);
 	var swiper3 = new Swiper('.swiper3', options);
 	//Navigation arrows
-	$('.arrow-left').click(function(e) {
+	$('.swiper1 .arrow-left').click(function(e) {
         e.preventDefault()
 		swiper1.swipePrev()
     });
-	$('.arrow-right').click(function(e) {
+	$('.swiper1 .arrow-right').click(function(e) {
         e.preventDefault()
 		swiper1.swipeNext()
+    });
+	//Navigation arrows
+	$('.swiper2 .arrow-left').click(function(e) {
+        e.preventDefault()
+		swiper2.swipePrev()
+    });
+	$('.swiper2 .arrow-right').click(function(e) {
+        e.preventDefault()
+		swiper2.swipeNext()
     });
 })
