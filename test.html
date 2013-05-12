@@ -12,170 +12,140 @@
         <meta name="viewport" content="height=device-height">
 
 		<link rel="stylesheet" href="css/bootstrap.css">
-        <link rel="stylesheet" href="css/test.css">
-
+        <link rel="stylesheet" href="css/main.css">
 
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
-        <!--[if lt IE 7]>
+	<!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
 		
-		<!-- This code is taken from http://twitter.github.com/bootstrap/examples/hero.html -->
+		<!-- This code is taken from http://twitter.github.com/bootstrap -->
         <nav class="navbar navbar-inverse navbar-fixed-top">
             <div class="navbar-inner">
-                <div class="container">
+				<a href="index.html">
 					<div class="logo">
+						&nbsp;
 					</div>
+				</a>
+				
 
-                    <a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                        <span class="icon-bar"></span>
-                    </a>
-                    <div class="nav-collapse collapse">
-                        <ul class="nav pull-right">
-                            <li class="dropdown">
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown">Works<b class="caret"></b></a>
-								<ul class="dropdown-menu">
-									<li class="active"><a href="#">2D</a></li>
-									<li><a href="#">3D</a></li>
-									<li><a href="#">Illustration</a></li>
-									<li><a href="#">Web Design</a></li>
-									<li><a href="#">Print Media</a></li>
-									<li><a href="#">Graphic Design</a></li>
-								</ul>
-                            </li>
-							<li><a href="#about">About</a></li>
-                            <li><a href="#contact">Contact</a></li>
-                        </ul>
-                    </div><!--/.nav-collapse -->
-                </div>
+				<a class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</a>
+				<div class="nav-collapse collapse">
+					<ul class="nav pull-right">
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Works<b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li class="active"><a href="#">2D</a></li>
+								<li><a href="index.html">3D</a></li>
+								<li><a href="index.html">Illustration</a></li>
+								<li><a href="index.html">Web Design</a></li>
+								<li><a href="index.html">Print Media</a></li>
+								<li><a href="index.html">Graphic Design</a></li>
+							</ul>
+						</li>
+						<li><a href="about.html">About</a></li>
+						<li><a href="#contact">Contact</a></li>
+					</ul>
+				</div><!--/.nav-collapse -->
             </div>
         </nav>
+    
+		<div class="container-fluid">
 
-        <div class="container-fluid">
+			<div class="swiper-container v-swiper">
 
-		
-			<!-- start gallery -->
-			<div class="gallery_wrapper"> 
-				<a class="arrow-left" href="#"></a> 
-				<a class="arrow-right" href="#"></a>
-				<div class="swiper-container">
-					test
-					<img src="img/test.jpg" />
+				<div class="swiper-wrapper">
+					
+					<div class="swiper-slide" >
+						
+						<!-- start gallery -->
+						<div class="gallery"> 
+							<div class="gallery_wrapper"> 
+								
+								<div class="swiper-container h-swiper">
+									<a class="arrow-left" href="#"></a> 
+									<a class="arrow-right" href="#"></a>
+									
+									<div class="swiper-wrapper">
+										<div class="swiper-slide">
+											<img src="img/test.jpg" />
+										</div>
+										<div class="swiper-slide">
+											<img src="img/test2.jpg" />
+										</div>
+										<div class="swiper-slide">
+											<h2>Slide 3</h2>
+											<img src="img/logo.png" />
+										</div>
+										<div class="swiper-slide red-slide">
+											<h2>Slide 4</h2>
+											<p>The last one</p>
+										</div>
+									</div>
+									
+								</div>			
+							</div>
+							<section class="project_info">
+								<div class="descr">
+									<b>Project:</b> longa ferri Lorem post discipulae venit ad nomine.
+								</div>
+								<div class="info">
+									<b>Info:</b>  Lorem ipsum dolor sit amet, austri ventriculum defunctae cubiculo ab eos.
+								</div>
+							</section>
+						</div><!-- /gallery -->
+						
+					</div>
+					
+					<div class="swiper-slide" >
+
+						<div class="swiper-container swiper-nested2 h-swiper">
+						
+							<div class="swiper-wrapper" >
+								<div class="swiper-slide green-slide" >Vertical Slide 1</div>
+								<div class="swiper-slide blue-slide" >Vertical Slide 2</div>
+								<div class="swiper-slide pink-slide" >Vertical Slide 3</div>
+								<div class="swiper-slide green-slide" >Vertical Slide 4</div>
+								<div class="swiper-slide blue-slide" >Vertical Slide 5</div>
+								<div class="swiper-slide pink-slide" >Vertical Slide 6</div>
+							</div>
+						</div>
+						
+					</div>
+					<div class="swiper-slide orange-slide" > Slide 3 </div>
+					<div class="swiper-slide" >
+						<div class="swiper-container swiper-nested3 h-swiper">
+							
+							<div class="swiper-wrapper" >
+								<div class="swiper-slide green-slide" >Vertical Slide 1</div>
+								<div class="swiper-slide blue-slide" >Vertical Slide 2</div>
+								<div class="swiper-slide pink-slide" >Vertical Slide 3</div>
+								<div class="swiper-slide green-slide" >Vertical Slide 4</div>
+								<div class="swiper-slide blue-slide" >Vertical Slide 5</div>
+								<div class="swiper-slide pink-slide" >Vertical Slide 6</div>
+							</div>
+						</div>
+						
+					</div>
+					<div class="swiper-slide green-slide" > Slide 4 </div>
 				</div>
-				
-				<section>
-					<div class="descr">
-						<b>Project:</b> Test
-					</div>
-					<div class="info">
-						<b>Info:</b> 2013
-					</div>
-				</section>
-			</div><!-- /gallery -->
-
-            <hr class="buffer"/>
-
+			</div>
 		
-			<!-- start gallery -->
-			<div class="gallery_wrapper"> 
-				<a class="arrow-left" href="#"></a> 
-				<a class="arrow-right" href="#"></a>
-				<div class="swiper-container">
-					test
-					<img src="img/test.jpg" />
-				</div>
-				
-				<section>
-					<div class="descr">
-						<b>Project:</b> Test
-					</div>
-					<div class="info">
-						<b>Info:</b> 2013
-					</div>
-				</section>
-			</div><!-- /gallery -->
-
-            <hr class="buffer"/>
-
-		
-			<!-- start gallery -->
-			<div class="gallery_wrapper"> 
-				<a class="arrow-left" href="#"></a> 
-				<a class="arrow-right" href="#"></a>
-				<div class="swiper-container">
-					test
-					<img src="img/test.jpg" />
-				</div>
-				
-				<section>
-					<div class="descr">
-						<b>Project:</b> Test
-					</div>
-					<div class="info">
-						<b>Info:</b> 2013
-					</div>
-				</section>
-			</div><!-- /gallery -->
-
-            <hr class="buffer"/>
-
-		
-			<!-- start gallery -->
-			<div class="gallery_wrapper"> 
-				<a class="arrow-left" href="#"></a> 
-				<a class="arrow-right" href="#"></a>
-				<div class="swiper-container">
-					test
-					<img src="img/test.jpg" />
-				</div>
-				
-				<section>
-					<div class="descr">
-						<b>Project:</b> Test
-					</div>
-					<div class="info">
-						<b>Info:</b> 2013
-					</div>
-				</section>
-			</div><!-- /gallery -->
-
-            <hr class="buffer"/>
-
-		
-			<!-- start gallery -->
-			<div class="gallery_wrapper"> 
-				<a class="arrow-left" href="#"></a> 
-				<a class="arrow-right" href="#"></a>
-				<div class="swiper-container">
-					test
-					<img src="img/test.jpg" />
-				</div>
-				
-				<section>
-					<div class="descr">
-						<b>Project:</b> Test
-					</div>
-					<div class="info">
-						<b>Info:</b> 2013
-					</div>
-				</section>
-			</div><!-- /gallery -->
-
-            <hr class="buffer"/>
-
+	
         </div> <!-- /container -->
 
-		<footer>
-			<p>&copy; 2013</p>
-		</footer>
-		
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 
-        <script src="bootstrap/js/bootstrap.min.js"></script>
+        <script src="js/vendor/bootstrap.min.js"></script>
+        <script src="js/main.js"></script>
+		
+        <script src="js/vendor/idangerous.swiper-1.9.3.js"></script>
     </body>
 </html>
