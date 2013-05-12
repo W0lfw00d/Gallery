@@ -5,6 +5,7 @@ $(function(){
 	var options = {
 		loop:true,
 		grabCursor: true,
+		keyboardControl: true, 
 	}
 	//Main Swiper
 	var swiper1 = new Swiper('.swiper1', options);
@@ -19,7 +20,6 @@ $(function(){
         e.preventDefault()
 		swiper1.swipeNext()
     });
-	//Navigation arrows
 	$('.swiper2 .arrow-left').click(function(e) {
         e.preventDefault()
 		swiper2.swipePrev()
@@ -27,5 +27,13 @@ $(function(){
 	$('.swiper2 .arrow-right').click(function(e) {
         e.preventDefault()
 		swiper2.swipeNext()
+    });
+	$('.swiper3 .arrow-left').click(function(e) {
+        e.preventDefault()
+		swiper3.swipePrev()
+    });
+	$('.swiper3 .arrow-right').click(function(e) {
+        e.preventDefault()
+		swiper3.swipeNext()
     });
 })
