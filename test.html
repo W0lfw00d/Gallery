@@ -13,13 +13,49 @@
 
 		<link rel="stylesheet" href="css/bootstrap.css">
         <link rel="stylesheet" href="css/main.css">
+        <script>
+var tag = document.createElement('script');
 
+      tag.src = "https://www.youtube.com/iframe_api";
+      var firstScriptTag = document.getElementsByTagName('script')[0];
+      firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+      var player;
+      function onYouTubeIframeAPIReady() {
+        player = new YT.Player('player', {
+          height: '390',
+          width: '640',
+          videoId: 'M7lc1UVf-VE',
+          events: {
+            'onReady': onPlayerReady,
+            'onStateChange': onPlayerStateChange
+          }
+        });
+      }
+
+      // 4. The API will call this function when the video player is ready.
+      function onPlayerReady(event) {
+        event.target.playVideo();
+      }
+
+      // 5. The API calls this function when the player's state changes.
+      //    The function indicates that when playing a video (state=1),
+      //    the player should play for six seconds and then stop.
+      var done = false;
+      </script>
         <script src="js/vendor/modernizr-2.6.2-respond-1.1.0.min.js"></script>
     </head>
     <body>
 	<!--[if lt IE 7]>
             <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
         <![endif]-->
+		
+		<!--div class="video-container">
+			<iframe src="https://www.youtube-nocookie.com/embed/ufsrgE0BYf0" frameborder="0" allowfullscreen></iframe>
+		</div>
+		<div class="video-container">
+			<iframe src="http://player.vimeo.com/video/6284199?title=0&byline=0&portrait=0" width="800" height="450" frameborder="0"></iframe>
+		</div-->
+		
 		
 		<!-- This code is taken from http://twitter.github.com/bootstrap -->
         <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -74,7 +110,7 @@
 									
 									<div class="swiper-wrapper">
 										<div class="swiper-slide">
-											<img src="img/test.jpg" />
+											<div id="player"></div>
 										</div>
 										<div class="swiper-slide">
 											<img src="img/test2.jpg" />

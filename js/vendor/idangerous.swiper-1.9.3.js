@@ -684,11 +684,12 @@ var Swiper = function (selector, params, callback) {
 
     _this.allowLinks = true;
     if (params.preventLinks) {
-        var links = _this.container.querySelectorAll('a')
+        var links = _this.container.querySelectorAll('a');
         for (var i=0; i<links.length; i++) {
-            links[i].addEventListener('click', preventClick, false) 
+            links[i].addEventListener('click', preventClick, false);
         }
     }
+    
     function preventClick(e) {
         if (!_this.allowLinks) e.preventDefault();  
     }
