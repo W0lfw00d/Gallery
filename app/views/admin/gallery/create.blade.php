@@ -41,9 +41,10 @@
 		</li>
 		@if(is_array($imageLibrary))
 			@foreach($imageLibrary as $libImage)
+				<?php $baseName = pathinfo($libImage,PATHINFO_BASENAME); ?>
 				<li id="imgLib_{{{ pathinfo($libImage,PATHINFO_BASENAME) }}}">
 				    <a href="#" class="thumbnail center-this">
-						{{ HTML::image($siteData['settings']['galleryUploadDir'] .'/thumb/'.pathinfo($libImage,PATHINFO_BASENAME)) }}
+						{{ HTML::image($siteData['settings']['galleryUploadDir'] .'/thumb/'.$baseName,$baseName) }}
 					</a>
 				</li>
 			@endforeach

@@ -208,6 +208,7 @@ div.mce-tinymce.mce-container.mce-panel {
 	max-height: 400px;
 	width: 100%;
 	overflow-y: scroll;
+	overflow-x: hidden;
 }
 .thumbnails > li {
 	width: 50px;

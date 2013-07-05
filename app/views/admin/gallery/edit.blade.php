@@ -31,7 +31,7 @@
 			@if($slide->contentType_id==1)
 				<li id="slideImg_{{{ $slide->content }}}">
 				    <a href="#" class="thumbnail center-this">
-						{{ HTML::image($siteData['settings']['galleryUploadDir'].'/thumb/'.$slide->content) }}
+						{{ HTML::image($siteData['settings']['galleryUploadDir'].'/thumb/'.$slide->content,$slide->content) }}
 					</a>
 					{{ Form::hidden('slideContent[]', $slide->content) }}
 					{{ Form::hidden('slideId[]', $slide->id) }}
@@ -51,9 +51,10 @@
 		</li>
 		@if(is_array($imageLibrary))
 			@foreach($imageLibrary as $libImage)
+				<?php $baseName = pathinfo($libImage,PATHINFO_BASENAME); ?>
 				<li id="imgLib_{{{ pathinfo($libImage,PATHINFO_BASENAME) }}}">
 				    <a href="#" class="thumbnail center-this">
-						{{ HTML::image($siteData['settings']['galleryUploadDir'] .'/thumb/'.pathinfo($libImage,PATHINFO_BASENAME)) }}
+						{{ HTML::image($siteData['settings']['galleryUploadDir'] .'/thumb/'.$baseName,$baseName) }}
 					</a>
 				</li>
 			@endforeach
