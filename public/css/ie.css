@@ -1,0 +1,6 @@
+.ff.center-this {
+	position: absolute;
+    top: 50%;
+    bottom: -50%;
+    text-align: center;
+}

@@ -1,0 +1,24 @@
+# ignore everything except .gitignore
+*
+!.gitignore
+!upload/
+!upload/background/
+!upload/background/large/
+!upload/background/medium/
+!upload/background/small/
+!upload/background/thumb/
+!upload/foreground/
+!upload/foreground/large/
+!upload/foreground/medium/
+!upload/foreground/small/
+!upload/foreground/thumb/
+!upload/logo/
+!upload/logo/large/
+!upload/logo/medium/
+!upload/logo/small/
+!upload/logo/thumb/
+!upload/gallery/
+!upload/gallery/large/
+!upload/gallery/medium/
+!upload/gallery/small/
+!upload/gallery/thumb/
