@@ -1,5 +1,5 @@
 # ignore everything except .gitignore
-*
+
 !.gitignore
 !upload/
 !upload/background/
