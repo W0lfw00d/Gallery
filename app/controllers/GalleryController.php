@@ -19,12 +19,12 @@ class GalleryController extends \BaseController {
 	 */
 	public function create()
 	{
-		$user = new User();
+		/*$user = new User();
 		$user->name = "maarten";//the login
 		$user->email = "mdenheyer@gmail.com";
 		$user->password= Hash::make("test");
 		$user->save();
-		return "new user saved";
+		return "new user saved";*/
 	}
 
 	/**

@@ -214,6 +214,18 @@ div.mce-tinymce.mce-container.mce-panel {
 	width: 50px;
 	height: 50px;
 }
+#deleteImagesForm .thumbnails li > a {
+	background-image:url('../img/minus.png');
+	background-repeat:no-repeat;
+	background-position:center; 
+}
+#deleteImagesForm .thumbnails li > a:hover {
+	background-color: grey;
+}
+#deleteImagesForm .thumbnail > img:hover {
+	opacity:0.2;
+	filter:alpha(opacity=20); /* For IE8 and earlier */
+}
 .thumbnail > img {
 	max-height: 50px;
 	max-width: 50px;

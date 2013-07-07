@@ -74,11 +74,8 @@ class ImageLibraryAdminController extends AdminController {
         foreach ($this->sizes as $value) {
             $this->deleteFile($directory.'/'.$value.'/'.$data['filename']);    
         }
-        if($result){
-            return Response::json('image deleted', 200);
-        } else {
-            return Response::json('', 400);
-        }
+        Slide::whereContent($data['filename'])->delete();
+        return Response::json('image deleted', 200);
     }
 
     private function deleteFile($file){
