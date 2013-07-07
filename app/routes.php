@@ -146,12 +146,13 @@ Route::group(array('prefix' => 'admin','before'=>'auth.basic'),function(){
 	Route::resource('theme','ThemeAdminController');
 	Route::resource('category','CategoryAdminController');
 	Route::resource('gallery','GalleryAdminController');
-	
 	Route::resource('page','PageAdminController');
 	Route::resource('settings','SettingsAdminController');
+	
+	Route::resource('images','ImageLibraryAdminController');
+	Route::post('uploadImage', 'ImageLibraryAdminController@postImage');
+	Route::post('deleteImage', 'ImageLibraryAdminController@postDeleteImage');
 });
-//TODO: set this after auth.basic?
-Route::post('uploadImage', 'ImageLibraryAdminController@postImage');
 
 //Guess..
 Route::get('/logout', function()

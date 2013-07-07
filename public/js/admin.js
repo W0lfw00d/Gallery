@@ -7,9 +7,10 @@ $(document).ready(function(){
     $('form *:input[type!=hidden]:first').focus();
 
     //Simple delete confirmation script
-    $('.confirmDelete').click(function(){
+    var deleteMe = function(){
         return confirm('Are you sure you want to delete this?') ? true : false;
-    });
+    };
+    $('.confirmDelete').click(deleteMe);
     
     //Add a current page marker to the navigation
     var url = window.location;
@@ -28,21 +29,17 @@ $(document).ready(function(){
             else { done(); }
         },
         init: function() {
-            //complete or success?
+            //on a success full upload make the img usefull/clickable in it's contexts
             this.on("success", function(file) {
                 //TODO; refactor this, it's a mess!
                 console.log('the file '+file.name+' has been uploaded successfully');
                 $(file.previewElement).click(function(){
                     var type = $('#uploadType').val();
                     var imgBaseDir = $('#' + type + 'ImgBaseDir').val();
-                    //var imgName = $(this).find('.dz-filename span').text();
-                    //var imgSrc = file.previewElement.querySelector("[data-dz-thumbnail]").src;
                     var imgName = file.name;
                     var imgSrc = imgBaseDir + "/medium/" + imgName;
-                    console.log('the file '+file.name+' has been clicked '+ imgSrc);
                     if(type == 'gallery'){
                         var slideGallery = $('#slideGallery');
-
                         var foundSlide = slideGallery.find('li[id="slideImg_' + imgName + '"]');
                         if(foundSlide.length > 0)
                         {   
@@ -65,36 +62,6 @@ $(document).ready(function(){
                     return false;
                 });
             });
-            /*
-            this.on("complete", function() {
-                console.log('the upload is complete');
-                if (this.filesQueue.length == 0 && this.filesProcessing.length == 0) {
-                    // File finished uploading, and there aren't any left in the queue.
-                    console.log('the upload is complete for all files');
-                }
-            });
-            this.on("addedfile", function(file) {
-                // Create the remove button
-                var removeButton = Dropzone.createElement("<button>Remove file</button>");
-                // Capture the Dropzone instance as closure.
-                var _this = this;
-
-                // Listen to the click event
-                removeButton.addEventListener("click", function(e) {
-                  // Make sure the button click doesn't submit the form:
-                  e.preventDefault();
-                  e.stopPropagation();
-
-                  // Remove the file preview.
-                  _this.removeFile(file);
-                  // If you want to the delete the file on the server as well,
-                  // you can do the AJAX request here.
-                });
-
-                // Add the button to the file preview element.
-                file.previewElement.appendChild(removeButton);
-              });
-            */
         }
     };
 
@@ -129,6 +96,10 @@ $(document).ready(function(){
     FnImgGallery.index('foreground');
     FnImgGallery.index('background');
     FnImgGallery.index('logo');
+    FnImgGallery.destroy('Gallery',deleteMe);
+    FnImgGallery.destroy('Foreground',deleteMe);
+    FnImgGallery.destroy('Background',deleteMe);
+    FnImgGallery.destroy('Logo',deleteMe);
 });
 
 FnImgGallery = {
@@ -177,6 +148,25 @@ FnImgGallery = {
             var imgName = imgSrc.substring(index+1);
             $('#'+type).val(imgName);
             $('.index-'+type+' > img').attr('src',imgSrc);
+            return false;
+        });
+     },
+    destroy: function(type,confirmFunc){
+        $('#deleteImagesForm #delete'+type+'Library li[id^="imgLib_"]').click(function(){
+            //get the filename
+            var imgSrc = $(this).find('img').attr('src');
+            var index = imgSrc.lastIndexOf('/');
+            var imgName = imgSrc.substring(index+1);
+            //give the user a change to reconsider
+            if(confirmFunc()===true){
+                //send request to remove the image
+                $.post("deleteImage", 
+                        { _token: $('input[name="_token"]').val(), 
+                            filename: imgName,
+                            type: type } );
+                //remove from the DOM
+                $(this).remove();
+            }
             return false;
         });
     }

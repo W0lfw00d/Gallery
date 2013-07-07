@@ -8,7 +8,7 @@ use Imagine\Image\ImageInterface;
 class ImageLibraryAdminController extends AdminController {
 
     private $imagine;
-
+    private $sizes = array('','thumb','small','medium','large');
     public function __construct()
     {
         parent::__construct();
@@ -17,8 +17,20 @@ class ImageLibraryAdminController extends AdminController {
 
     public function index()
     {
-
-        return "nothing to see here";
+        //Show all avaliable images
+        $directory = public_path().$this->settings['logoUploadDir'];
+        $logoLibrary = File::glob($directory.'/*[jpg|png|gif]');
+        $directory = public_path().$this->settings['backgroundUploadDir'];
+        $backgroundLibrary = File::glob($directory.'/*[jpg|png|gif]');
+        $directory = public_path().$this->settings['foregroundUploadDir'];
+        $foregroundLibrary = File::glob($directory.'/*[jpg|png|gif]');
+        $directory = public_path().$this->settings['galleryUploadDir'];
+        $galleryLibrary = File::glob($directory.'/*[jpg|png|gif]');
+        return View::make('admin/image/delete')
+                        ->with(array('backgroundLibrary'=>$backgroundLibrary,
+                                     'galleryLibrary'=>$galleryLibrary,
+                                     'foregroundLibrary'=>$foregroundLibrary,
+                                     'logoLibrary'=>$logoLibrary));
     }
 
     //save a new image
@@ -53,6 +65,28 @@ class ImageLibraryAdminController extends AdminController {
         }
     }
 
+    //delete an image
+    public function postDeleteImage(){
+        $data = Input::all();
+
+        $directory = public_path().$this->settings[strtolower($data['type']).'UploadDir'];
+        //delete all the different sizes from the files
+        foreach ($this->sizes as $value) {
+            $this->deleteFile($directory.'/'.$value.'/'.$data['filename']);    
+        }
+        if($result){
+            return Response::json('image deleted', 200);
+        } else {
+            return Response::json('', 400);
+        }
+    }
+
+    private function deleteFile($file){
+        if(file_exists($file)){
+            return unlink($file);
+        }
+        return false;
+    }
     /*
     *   This resizes a image and save it in it's type directory
     *   TODO: make this better...
@@ -81,10 +115,5 @@ class ImageLibraryAdminController extends AdminController {
             default:
                 break;
         }
-    }
-
-
-    public function destroy(){
-
     }
 }

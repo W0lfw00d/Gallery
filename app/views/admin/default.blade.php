@@ -54,6 +54,7 @@
                             @section('main-menu')
                                 <li>{{ HTML::link('admin/page/1/edit','About page')}}</li>
                                 <li>{{ HTML::link('admin/page/2/edit','Contact page')}}</li>
+                                <li>{{ HTML::link('admin/images','Remove images')}}</li>
                                 <li>{{ HTML::link('admin/settings','Settings')}}</li>
                                 <li>{{ HTML::link('logout','Logout')}}</li>
                             @show
