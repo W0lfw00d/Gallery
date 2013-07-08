@@ -71,14 +71,15 @@ h2 {
 	width: 114px;
 	height: 82px;
 	cursor: pointer;
-	/*background-image: url(../img/logo.png);*/
 }
 .index-logo img {
 	height: 100%;
 }
+.index-logo.selected img {
+	border-bottom: 2px solid #ff0099;
+}
 .logo-left {
 	float: left;
-	padding-left: 10px;
 }
 .logo-center {
 	float: none;
@@ -87,7 +88,6 @@ h2 {
 }
 .logo-right {
 	float: right;
-	padding-right: 10px
 }
 .container-fluid {
 	height: 100%;
@@ -193,7 +193,7 @@ div.mce-tinymce.mce-container.mce-panel {
 }
 .index-foreground img {
 	max-height: 40%;
-	max-width: 40%;
+	/*max-width: 40%;*/
 }
 .index-background {
     position: relative;

@@ -2,8 +2,9 @@ $(document).ready(function(){
 
     //toggles the display of the extra information text
     $('.info_logo').click(function(){
-        $('.info').fadeToggle();
-        $('.caption').toggleClass('invisible');
+        var parent = $(this).parent();
+        parent.find('.info').fadeToggle();
+        parent.find('.caption').toggleClass('invisible');
     });
 
 	//Swiper options

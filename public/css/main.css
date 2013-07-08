@@ -308,13 +308,20 @@ a:hover.arrow-left , a:hover.arrow-right {
 	width: 100%;
 	text-align: center;
 	height: auto;/*10%*/
-	overflow-y:hidden;
+	overflow-y:hidden; 
 	clear:both;
 	margin:0 auto;
+	max-height: 70%;
+}
+.info_content {
+	overflow-y: auto;
+	max-height: 500px;
+	padding: 2px;
 }
 .info_content p {
-	line-height: 8px;
+	line-height: 16px;
 }
+
 .caption {
 	padding-top:2px;
 }
@@ -324,7 +331,7 @@ a:hover.arrow-left , a:hover.arrow-right {
 	bottom: 0;
 	z-index: 1;
 	background-color: #FFF;
-	padding: 5px 10px 25px 10px;
+	padding: 5px 10px 0 10px;
 	min-height: 200px;
 	text-align: justify;
 }
@@ -426,6 +433,9 @@ form {
 	textarea.input-xlarge {
 		width: 180px;
 	}
+	.info_content {
+		max-height: 360px;
+	}
 }
 @media (max-height: 480px) {
 	.project_info {
@@ -437,6 +447,10 @@ form {
 	.form-horizontal .controls {
 		float: left;
 	}
+	.info_content {
+		max-height: 360px;
+	}
+
 }
 
 /* FF only */

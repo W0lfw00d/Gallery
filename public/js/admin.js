@@ -77,13 +77,21 @@ $(document).ready(function(){
     $('.use-logo-form').click(function(){
         $('#uploadDir').val('logoUploadDir');
         $('#uploadType').val('logo');
+        selectLogo();
     });
 
     //sets the logo alignment class [theme admin page]
+    var selectLogo = function (){
+        var initalAlignment = $('#logoAlignClass').val();
+        $('.index-logo.'+initalAlignment).addClass('selected');
+    }
+    selectLogo();
     $('.index-logo').click(function(){
         var cssClasses = $(this).attr("class");
         logoAlignClass = cssClasses.split(' ')[1];
         $('#logoAlignClass').val(logoAlignClass);
+        $('.index-logo').removeClass('selected');
+        $(this).addClass('selected');
     });
 
     //make a function for callback
