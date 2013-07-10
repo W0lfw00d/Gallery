@@ -158,6 +158,9 @@ form {
 .form-horizontal .controls {
 	margin-left: 0;
 }
+.form-horizontal .control-label {
+	padding-right: 10px;
+}
 #uploadForm {
 	margin:10px 0;
 }

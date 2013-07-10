@@ -38,6 +38,7 @@ class GalleryAdminController extends \AdminController {
 		$name = Input::get('name');
 		$info = Input::get('info');
 		$caption = Input::get('caption');
+		$showInfo = Input::get('show-info')=="1" ? 1 : '';
 		$category_id = Input::get('category_id');
 		$slideContent = Input::get('slideContent');
 		$slideType = Input::get('slideType');//array
@@ -56,6 +57,7 @@ class GalleryAdminController extends \AdminController {
 			$gallery->name = $name;
 			$gallery->caption = $caption;
 			$gallery->info = $info;
+			$gallery->show_info = $showInfo;
 			$gallery->category_id = $category_id;
 			//$gallery->order = Gallery::whereCategory_id(1)->max('order')+1;//put it at the bottom
 			//check if it's saved
@@ -126,6 +128,7 @@ class GalleryAdminController extends \AdminController {
 	{
 		$name = Input::get('name');
 		$info = Input::get('info');
+		$showInfo = Input::get('show-info')=='1' ? 1 : '';
 		$caption = Input::get('caption');
 		$category_id = Input::get('category_id');
 		$slideContent = Input::get('slideContent');//array
@@ -145,6 +148,7 @@ class GalleryAdminController extends \AdminController {
 			$gallery = Gallery::find($id);
 			$gallery->name = $name;
 			$gallery->caption = $caption;
+			$gallery->show_info = $showInfo;
 			$gallery->info = $info;
 			$gallery->category_id = $category_id;
 
@@ -164,7 +168,6 @@ class GalleryAdminController extends \AdminController {
 				 // Redirect to the gallery list
             	return Redirect::to('admin/category/'.$category_id.'/edit')->with('success', 'The changes to gallery "'.$gallery->name.'" have been saved.');
             }
-
             // Redirect to the gallery edit page
             return Redirect::to('admin/gallery/'.$id.'/edit')->with('error', 'something went wrong :(');
         }

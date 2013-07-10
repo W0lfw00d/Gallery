@@ -79,6 +79,15 @@
 			</div>
 		</div>
 
+		<div class="control-group">
+			{{ Form::label('show-info', 'Active / deactive info text', array('class' => 'control-label')); }}
+			<div class="controls">
+			    <div class="input-prepend">
+					{{ Form::checkbox('show-info', 1, 1) }}
+				</div>
+			</div>
+		</div>
+
 		<div class="control-group {{{ $errors->has('category_id') ? 'error' : '' }}}">
 			<label class="control-label" for="name">Category name</label>
 			<div class="controls">

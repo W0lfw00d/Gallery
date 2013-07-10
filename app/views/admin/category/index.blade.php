@@ -10,7 +10,7 @@
 @section('content')
 <div class="page-header">
 	<h3>
-		Category Management
+<!-- 		Project Management -->
 
 		<div class="pull-right">
 			<a href="{{{ URL::to('admin/category/create') }}}" class="btn btn-small btn-info"><i class="icon-plus-sign icon-white"></i> Create</a>
