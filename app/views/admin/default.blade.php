@@ -13,11 +13,9 @@
         </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-        <!--Why use PHP to make a absolute path? Don't see the point yet. Useful for Content servers? -->
         {{ HTML::style('css/bootstrap.css') }}
         {{ HTML::style('css/bootstrap-responsive.css') }}
         {{ HTML::style('css/admin.css') }}
-        {{-- HTML::style('css/admin.css') --}}
         {{ HTML::style('css/dropzonejs.css') }}
         <!--[if lt IE 10]> {{ HTML::style('css/ie.css') }} <![endif]-->
         {{ HTML::script('js/vendor/modernizr-2.6.2-respond-1.1.0.min.js') }}
@@ -76,17 +74,8 @@
         <script>window.jquery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
 
         {{ HTML::script('js/vendor/bootstrap.min.js') }}
-        {{-- HTML::script('js/vendor/idangerous.swiper-dev.js') --}}
-        {{ HTML::script('js/vendor/tinymce/tinymce.min.js') }}
+        {{ HTML::script('js/vendor/ckeditor/ckeditor.js') }}
         {{ HTML::script('js/plugins.js') }}
-        {{-- HTML::script('js/main.js') --}}
         {{ HTML::script('js/admin.js') }}
-
-        <!--script>
-            var _gaq=[['_setaccount','ua-xxxxx-x'],['_trackpageview']];
-            (function(d,t){var g=d.createelement(t),s=d.getelementsbytagname(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentnode.insertbefore(g,s)}(document,'script'));
-        </script-->
     </body>
 </html>

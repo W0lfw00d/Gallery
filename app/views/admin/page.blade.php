@@ -14,9 +14,8 @@
 
 					<div class="controls">
 					    <div class="input-prepend">
-						<span class="add-on"><i class="icon-list"></i></span>
 							{{ Form::textarea('content', $page->content, 
-												array('class' => 'input-xxlarge adminTextarea',
+												array('class' => 'input-xxlarge adminTextarea ckeditor',
 													  'rows' => '20')) }}
 						</div>
 					</div>

@@ -12,5 +12,4 @@ class Slide extends Eloquent {
 	{
 		return $this->belongsTo('Gallery');
 	}
-
 }

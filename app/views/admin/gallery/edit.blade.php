@@ -29,7 +29,7 @@
 	<ul class="thumbnails connected" id="slideGallery">
 		@foreach($gallery->slides()->get() as $slide)
 			@if($slide->contentType_id==1)
-				<li id="slideImg_{{{ $slide->content }}}">
+				<li class="swap" id="slideImg_{{{ $slide->content }}}">
 				    <a href="#" class="thumbnail center-this">
 						{{ HTML::image($siteData['settings']['galleryUploadDir'].'/thumb/'.$slide->content,$slide->content) }}
 					</a>
@@ -42,7 +42,6 @@
 	</ul>
 
 	<h2>Image library</h2>
-	<!--div class="controls galley_images"-->
 	<ul class="thumbnails connected" id="imgLibrary">
 		<li>
 		    <a href="#" class="thumbnail center-this" data-toggle="collapse" data-target="#uploadForm">
@@ -52,10 +51,12 @@
 		@if(is_array($imageLibrary))
 			@foreach($imageLibrary as $libImage)
 				<?php $baseName = pathinfo($libImage,PATHINFO_BASENAME); ?>
-				<li id="imgLib_{{{ pathinfo($libImage,PATHINFO_BASENAME) }}}">
+				<li class="swap" id="imgLib_{{{ pathinfo($libImage,PATHINFO_BASENAME) }}}">
 				    <a href="#" class="thumbnail center-this">
 						{{ HTML::image($siteData['settings']['galleryUploadDir'] .'/thumb/'.$baseName,$baseName) }}
 					</a>
+					{{ Form::hidden('slideContent[]',$baseName,array('disabled'=>'disabled')) }}
+					{{ Form::hidden('slideType[]',1,array('disabled'=>'disabled')) }}
 				</li>
 			@endforeach
 		@endif
@@ -84,7 +85,7 @@
 			<div class="controls">
 			    <div class="input-prepend">
 					{{ Form::textarea('info', $gallery->info, 
-										array('class' => 'input-xxlarge adminTextarea',
+										array('class' => 'input-xxlarge adminTextarea ckeditor',
 											  'rows' => '20')) }}
 				</div>
 			</div>

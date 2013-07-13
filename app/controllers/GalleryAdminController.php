@@ -111,11 +111,26 @@ class GalleryAdminController extends \AdminController {
 		$gallery = Gallery::findOrFail($id);
 		$categories = Category::whereCategory_id(1)->lists('name', 'id');
 		
-		//show all avaliable images
+		//Get all avaliable images
 	    $directory = public_path().$this->settings['galleryUploadDir'];
 		$imageLibrary = File::glob($directory.'/*[jpg|png|gif]');
+
+		//Put the currently used images in a nice searchable array
+		$slides = $gallery->slides()->get();
+		for ($i=0; $i < sizeof($slides); $i++) { 
+			$currentImages[] = $slides[$i]->content;
+		}
+
+		//Filter out the images currently used in the gallery
+		for ($i=0; $i < sizeof($imageLibrary); $i++) {
+			$baseName = pathinfo($imageLibrary[$i],PATHINFO_BASENAME);
+			if(!in_array($baseName,$currentImages)){
+				$imageLibraryNew[] = $imageLibrary[$i];
+			}
+		}
+
 		return View::make('admin/gallery/edit')
-						->with(array('categories'=>$categories,'gallery'=>$gallery,'imageLibrary'=>$imageLibrary));
+						->with(array('categories'=>$categories,'gallery'=>$gallery,'imageLibrary'=>$imageLibraryNew));
 	}
 
 	/**

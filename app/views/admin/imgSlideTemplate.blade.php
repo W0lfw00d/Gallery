@@ -1,6 +1,6 @@
 <div class="hide">
 	{{-- prototype for slides --}}
-	<li id='imgSlideTemplate'>
+	<li class="swap" id='imgSlideTemplate'>
 	    <a href='#' class='thumbnail center-this'>
 	        {{ HTML::image($siteData['settings']['galleryUploadDir'].'/thumb') }}
 	    </a>

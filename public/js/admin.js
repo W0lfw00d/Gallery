@@ -1,11 +1,5 @@
 $(document).ready(function(){
 
-    //TODO: make a new class for tinymce with less options?
-    tinymce.init({selector:'.adminTextarea'});
-
-    //This is here to stop tinymce from taking the focus and opening the edit pages at the bottom
-    $('form *:input[type!=hidden]:first').focus();
-
     //Simple delete confirmation script
     var deleteMe = function(){
         return confirm('Are you sure you want to delete this?') ? true : false;
@@ -32,7 +26,6 @@ $(document).ready(function(){
             //on a success full upload make the img usefull/clickable in it's contexts
             this.on("success", function(file) {
                 //TODO; refactor this, it's a mess!
-                console.log('the file '+file.name+' has been uploaded successfully');
                 $(file.previewElement).click(function(){
                     var type = $('#uploadType').val();
                     var imgBaseDir = $('#' + type + 'ImgBaseDir').val();
@@ -52,7 +45,9 @@ $(document).ready(function(){
                             imgSlideClone.find('img').attr('src',imgSrc);
                             imgSlideClone.find('input[name="slideContent[]"]').attr('value',imgName);
                             slideGallery.append(imgSlideClone);
-                            reInitSortable();
+                            FnImgGallery.makeSortable();
+                            FnImgGallery.swapImage('#slideGallery','#imgLibrary');
+                            this.remove();
                         }
 
                     } else {
@@ -94,13 +89,7 @@ $(document).ready(function(){
         $(this).addClass('selected');
     });
 
-    //make a function for callback
-    var reInitSortable = function(){
-        $('#slideGallery').sortable();
-    };
-    reInitSortable();
-    //init the clickability of the library image to add to the gallery
-    FnImgGallery.init(reInitSortable);
+    FnImgGallery.makeSortable();
     FnImgGallery.index('foreground');
     FnImgGallery.index('background');
     FnImgGallery.index('logo');
@@ -108,46 +97,34 @@ $(document).ready(function(){
     FnImgGallery.destroy('Foreground',deleteMe);
     FnImgGallery.destroy('Background',deleteMe);
     FnImgGallery.destroy('Logo',deleteMe);
+    //init the clickability of the library image to add to the gallery or remove it
+    FnImgGallery.swapImage('#slideGallery','#imgLibrary');
+    FnImgGallery.swapImage('#imgLibrary','#slideGallery',true);
 });
 
 FnImgGallery = {
 
     //TODO: some function to directly add the uploaded images
     //TODO: make it more configurable
-
-    init: function(callBackFunction) {
-
-        var imgLibrary = $('#imgLibrary');
-        var slideGallery = $('#slideGallery');
-        var imgBaseDir = $('#galleryImgBaseDir').val();
-        var imgSlideTemplate = $('#imgSlideTemplate');
-        
-        $("#imgLibrary li").click(function(){
-            var currentObj = $(this);
-            //Get the name of the file by removing that path
-            var currentId = currentObj.attr('id');
-            slideGallery = $(slideGallery);
-            var index = currentId.indexOf('_');
-            var imgName = currentId.substring(index+1);
-            //Search gallery for currentObj image
-            var foundSlide = slideGallery.find('li[id="slideImg_' + imgName + '"]')
-            if(foundSlide.length > 0)
-            {   
-                //if found remove it
-                foundSlide.remove();
+    swapImage: function(source,target,disable){
+        $(source+' li.swap').click(function(){
+            var li = $(this);
+            li.appendTo($(target));
+            if(disable === true){
+                li.find('input').removeAttr('disabled');
+                FnImgGallery.swapImage(target,source);
             } else {
-                //else add it
-                var imgSlideClone = $(imgSlideTemplate).clone();
-                imgSlideClone.attr('id','slideImg_'+imgName);
-                imgSlideClone.find('img').attr('src',imgBaseDir + '/thumb/' + imgName);
-                imgSlideClone.find('input[name="slideContent[]"]').attr('value',imgName);
-                slideGallery.append(imgSlideClone);
-                if (typeof callBackFunction == "function") { callBackFunction(); } 
-                else { console.error("callBackFunction not a function"); }
+                li.find('input').attr('disabled','disabled');
+                FnImgGallery.swapImage(target,source,true);
             }
-            return false;
+            FnImgGallery.makeSortable();
         });
     },
+    //Make the list drag/sortable
+    makeSortable: function(){
+        $('#slideGallery').sortable();
+    },
+    //Use the image as src for 'type'
     index: function(type){
         $('#'+type+'Library li[id^="imgLib_"]').click(function(){
             //var imgBaseDir = $('#' + type + 'ImgBaseDir').val();
@@ -159,6 +136,7 @@ FnImgGallery = {
             return false;
         });
      },
+    //Delete an image
     destroy: function(type,confirmFunc){
         $('#deleteImagesForm #delete'+type+'Library li[id^="imgLib_"]').click(function(){
             //get the filename

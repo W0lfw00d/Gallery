@@ -347,6 +347,7 @@ a:hover.arrow-left , a:hover.arrow-right {
 	max-width: 800px;
 	width: 80%;
 	padding-bottom: 20px;
+	padding-top: 5px;
 }
 
 .text-center {
