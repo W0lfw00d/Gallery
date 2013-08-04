@@ -70,6 +70,7 @@
 
         {{ HTML::script('js/vendor/bootstrap.min.js') }}
         {{ HTML::script('js/vendor/idangerous.swiper-2.js') }}
+        {{ HTML::script('js/vendor/tinyscrollbar.min.js') }}
         {{ HTML::script('js/plugins.js') }}
         {{ HTML::script('js/main.js') }}
  

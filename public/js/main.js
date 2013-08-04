@@ -1,9 +1,12 @@
 $(document).ready(function(){
+     //$('.tinyscrollbar').tinyscrollbar();
 
     //toggles the display of the extra information text
     $('.info_logo').click(function(){
         var parent = $(this).parent();
         parent.find('.info').fadeToggle();
+        var textDiv = parent.find('.tinyscrollbar');
+        textDiv.tinyscrollbar();
         parent.find('.caption').toggleClass('invisible');
     });
 

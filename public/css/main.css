@@ -314,7 +314,6 @@ a:hover.arrow-left , a:hover.arrow-right {
 	max-height: 70%;
 }
 .info_content {
-	overflow-y: auto;
 	max-height: 500px;
 	padding: 2px;
 }
@@ -340,13 +339,24 @@ a:hover.arrow-left , a:hover.arrow-right {
 	text-align: center;
 	cursor: pointer;
 }
+
+/* Tiny Scrollbar for the info text */
+.tinyscrollbar { width: 520px; margin: 20px 0 10px; }
+.tinyscrollbar .viewport { width: 500px; height: 400px; overflow: hidden; position: relative; }
+.tinyscrollbar .overview { list-style: none; position: absolute; left: 0; top: 0; padding: 0; margin: 0; }
+.tinyscrollbar .scrollbar{ background: transparent url(../img/bg-scrollbar-track-y.png) no-repeat 0 0; position: relative; background-position: 0 0; float: right; width: 15px; }
+.tinyscrollbar .track { background: transparent url(../img/bg-scrollbar-trackend-y.png) no-repeat 0 100%; height: 100%; width:13px; position: relative; padding: 0 1px; }
+.tinyscrollbar .thumb { background: transparent url(../img/bg-scrollbar-thumb-y.png) no-repeat 50% 100%; height: 20px; width: 25px; cursor: pointer; overflow: hidden; position: absolute; top: 0; left: -5px; }
+.tinyscrollbar .thumb .end { background: transparent url(../img/bg-scrollbar-thumb-y.png) no-repeat 50% 0; overflow: hidden; height: 5px; width: 25px; }
+.tinyscrollbar .disable { display: none; }
+.noSelect { user-select: none; -o-user-select: none; -moz-user-select: none; -khtml-user-select: none; -webkit-user-select: none; }
+
 /* text page */
 .text {
 	margin: 0 auto;
 	text-align: justify;
 	max-width: 800px;
 	width: 80%;
-	padding-bottom: 20px;
 	padding-top: 5px;
 }
 
