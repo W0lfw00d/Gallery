@@ -5,8 +5,8 @@ $(document).ready(function(){
     $('.info_logo').click(function(){
         var parent = $(this).parent();
         parent.find('.info').fadeToggle();
-        var textDiv = parent.find('.tinyscrollbar');
-        textDiv.tinyscrollbar();
+        /*var textDiv = parent.find('.tinyscrollbar');
+        textDiv.tinyscrollbar();*/
         parent.find('.caption').toggleClass('invisible');
     });
 
@@ -16,6 +16,18 @@ $(document).ready(function(){
 		grabCursor: true,
 		keyboardControl: true
 	}
+
+  var mySwiper = new Swiper('.swiper-free-mode', {
+    scrollContainer:true,
+    mousewheelControl : true,
+    mode:'vertical',
+    //Enable Scrollbar
+    scrollbar: {
+      container :'.swiper-scrollbar',
+      hide: false,
+      draggable: false  
+    }
+  }); 
 
     //The main vertical page swiper
     var swiperN1 = $('.v-swiper').swiper( { slidesPerSlide:1,

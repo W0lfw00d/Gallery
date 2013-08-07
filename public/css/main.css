@@ -279,6 +279,27 @@ a:hover.arrow-left , a:hover.arrow-right {
 	height: 100%;
 }
 
+.text.swiper-container {
+	height:200px;
+}
+.swiper-scrollbar {
+	border-radius: 10px;
+	position: relative;
+	-ms-touch-action: none;
+	background: red;
+	border: 1px solid blue;
+}
+.swiper-scrollbar-drag {
+	height: 100%;
+	width: 100%;
+	position: relative;
+	background: blue;
+	border-radius: 10px;
+}
+.swiper-scrollbar-cursor-drag {
+	cursor: move;
+}
+
 .center-this {
 	height: 100%;
 	width:  100%;
@@ -332,6 +353,7 @@ a:hover.arrow-left , a:hover.arrow-right {
 	background-color: #FFF;
 	padding: 5px 10px 0 10px;
 	min-height: 200px;
+	max-height: 300px;
 	text-align: justify;
 }
 .info_logo {

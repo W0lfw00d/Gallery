@@ -28,7 +28,7 @@
         @section('nav_menu')
             <nav class="navbar navbar-inverse navbar-fixed-top {{ $siteData['settings']['logo-align-class'] }}">
                 <div class="navbar-inner">
-    				
+
     				<a href="#" class="logo logo_menu" data-toggle="collapse" data-target=".nav-collapse">
                             {{ HTML::image($siteData['settings']['logoUploadDir'].'/'.$siteData['settings']['logo']) }}
     				</a>
@@ -70,7 +70,7 @@
 
         {{ HTML::script('js/vendor/bootstrap.min.js') }}
         {{ HTML::script('js/vendor/idangerous.swiper-2.js') }}
-        {{ HTML::script('js/vendor/tinyscrollbar.min.js') }}
+        {{ HTML::script('js/vendor/scrollbar.swiper-2.0.js') }}
         {{ HTML::script('js/plugins.js') }}
         {{ HTML::script('js/main.js') }}
  

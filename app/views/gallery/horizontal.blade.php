@@ -27,17 +27,25 @@
               <b>{{ $gallery->caption }}</b>
             </div>
           @if ($gallery->show_info==1)
-            <div class="info hide">
-              <div class="info_content">
-                <div class="text tinyscrollbar swiper-no-swiping">
-                  <div class="scrollbar swiper-no-swiping"><div class="track swiper-no-swiping"><div class="thumb swiper-no-swiping"><div class="end swiper-no-swiping"></div></div></div></div>
-                  <div class="viewport swiper-no-swiping">
-                    <div class="overview swiper-no-swiping">
-                      {{ $gallery->info }}
-                    </div>
+            <div class="info ">
+              <div class="info_content ">
+                <div class="text">
+
+                 <div class="swiper-container swiper-free-mode">
+<div class="swiper-wrapper">
+<div class="swiper-slide">
+
+                      {{ $gallery->info }} 
+                      {{ $gallery->info }} 
+                      {{ $gallery->info }} 
+                      {{ $gallery->info }} 
+
+                  </div>
                   </div>
                 </div>
+                <div class="swiper-scrollbar"></div> 
               </div>
+            </div>
             </div>
             <div class="info_logo">
               {{ HTML::image('img/info.png') }}
