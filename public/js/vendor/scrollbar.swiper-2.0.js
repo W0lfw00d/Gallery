@@ -39,7 +39,10 @@ Swiper.prototype.plugins.scrollbar = function(swiper, params){
         if (!window.jQuery) return;
     }
 	function $$(s) {
-        if (document.querySelectorAll)
+		//MdH: check if the object given is a string or a jquery object
+		if(typeof s != "string")
+			return s;
+		else if (document.querySelectorAll)
             return document.querySelectorAll(s)
         else
             return jQuery(s)

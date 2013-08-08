@@ -1,13 +1,18 @@
 $(document).ready(function(){
-     //$('.tinyscrollbar').tinyscrollbar();
 
     //toggles the display of the extra information text
     $('.info_logo').click(function(){
         var parent = $(this).parent();
         parent.find('.info').fadeToggle();
-        /*var textDiv = parent.find('.tinyscrollbar');
-        textDiv.tinyscrollbar();*/
-        parent.find('.caption').toggleClass('invisible');
+        var captionText = parent.find('.caption');
+        captionText.toggleClass('invisible');
+        if( captionText.hasClass('invisible') ) {
+            //loop through all the scrollbars to reinit them
+            //TODO: only call 'resizeFix()' on the current scrollbar/swiper
+            for (var i = scrollbars.length - 1; i >= 0; i--) {
+                scrollbars[i].resizeFix();
+            };
+        }
     });
 
 	//Swiper options
@@ -15,19 +20,27 @@ $(document).ready(function(){
 		loop:true,
 		grabCursor: true,
 		keyboardControl: true
-	}
+	};
 
-  var mySwiper = new Swiper('.swiper-free-mode', {
-    scrollContainer:true,
-    mousewheelControl : true,
-    mode:'vertical',
-    //Enable Scrollbar
-    scrollbar: {
-      container :'.swiper-scrollbar',
-      hide: false,
-      draggable: false  
-    }
-  }); 
+    var scrollbars = new Array();
+    $('.swiper-text-scroll').each(function(){
+        var current = $(this);
+        var tsw = current.swiper( {
+                        //Text scroll/swiper options
+                        scrollContainer:true,
+                        mousewheelControl : true,
+                        mode:'vertical',
+                        //Enable Scrollbar
+                        scrollbar: {
+                          //pass the scrollbar as  jquery object or it will only get the first in the DOM
+                          container :current.find('.swiper-scrollbar'),
+                          hide: false,
+                          draggable: false
+                        }
+                    });
+        //collect all the scrollswipers to resize them when you actually show them
+        scrollbars[scrollbars.length] = tsw;
+    });
 
     //The main vertical page swiper
     var swiperN1 = $('.v-swiper').swiper( { slidesPerSlide:1,
