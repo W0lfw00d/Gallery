@@ -33,8 +33,8 @@ $(document).ready(function(){
                         //Enable Scrollbar
                         scrollbar: {
                           //pass the scrollbar as  jquery object or it will only get the first in the DOM
-                          container :current.find('.swiper-scrollbar'),
-                          hide: false,
+                          container: current.find('.swiper-scrollbar'),
+                          hide: true,
                           draggable: false
                         }
                     });
