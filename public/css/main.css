@@ -292,6 +292,7 @@ a:hover.arrow-left , a:hover.arrow-right {
 }
 .text .swiper-slide {
 	padding-right: 2px;
+	padding-bottom: 30px;
 	margin-right: 2px;
 	height: auto;
 }
@@ -480,7 +481,7 @@ form {
 		width: 180px;
 	}
 	.info_content {
-		max-height: 360px;
+		max-height: 400px;
 	}
 }
 @media (max-height: 480px) {
@@ -494,7 +495,7 @@ form {
 		float: left;
 	}
 	.info_content {
-		max-height: 360px;
+		max-height: 400px;
 	}
 
 }
