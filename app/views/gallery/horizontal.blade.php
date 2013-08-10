@@ -28,20 +28,15 @@
             </div>
           @if ($gallery->show_info==1)
             <div class="info hide">
-              <div class="info_content swiper-no-swiping">
+              <div class="info_content">
                 <div class="text">
                  <div class="swiper-container swiper-text-scroll">
                     <div class="swiper-wrapper">
                       <div class="swiper-slide">
-
-                      {{ $gallery->info }} 
-                      {{ $gallery->info }} 
-                      {{ $gallery->info }} 
-                      {{ $gallery->info }} 
-
+                        {{ $gallery->info }} 
                       </div>
                     </div>
-                  <div class="swiper-scrollbar"></div> 
+                    <div class="swiper-scrollbar"></div>
                 </div>
               </div>
             </div>

@@ -9,8 +9,8 @@ $(document).ready(function(){
         if( captionText.hasClass('invisible') ) {
             //loop through all the scrollbars to reinit them
             //TODO: only call 'resizeFix()' on the current scrollbar/swiper
-            for (var i = scrollbars.length - 1; i >= 0; i--) {
-                scrollbars[i].resizeFix();
+            for (var i = infoScrollbars.length - 1; i >= 0; i--) {
+                infoScrollbars[i].resizeFix();
             };
         }
     });
@@ -22,7 +22,7 @@ $(document).ready(function(){
 		keyboardControl: true
 	};
 
-    var scrollbars = new Array();
+    var infoScrollbars = new Array();
     $('.swiper-text-scroll').each(function(){
         var current = $(this);
         var tsw = current.swiper( {
@@ -39,11 +39,12 @@ $(document).ready(function(){
                         }
                     });
         //collect all the scrollswipers to resize them when you actually show them
-        scrollbars[scrollbars.length] = tsw;
+        infoScrollbars[infoScrollbars.length] = tsw;
     });
 
     //The main vertical page swiper
-    var swiperN1 = $('.v-swiper').swiper( { slidesPerSlide:1,
+    var swiperN1 = $('.v-swiper').swiper( { 
+                                            slidesPerSlide:1,
                                             keyboardControl: true,
                                             preventLinks: false,
                                             grabCursor:true,
