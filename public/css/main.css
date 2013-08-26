@@ -296,9 +296,6 @@ a:hover.arrow-left , a:hover.arrow-right {
 	margin-right: 2px;
 	height: auto;
 }
-.text p {
-	line-height: 10px;
-}
 
 .swiper-scrollbar {
 	border-radius: 10px;

@@ -5,7 +5,7 @@ $(document).ready(function(){
         return confirm('Are you sure you want to delete this?') ? true : false;
     };
     $('.confirmDelete').click(deleteMe);
-    
+
     //Add a current page marker to the navigation
     var url = window.location;
     $('.navbar a').filter(function() {
@@ -35,7 +35,7 @@ $(document).ready(function(){
                         var slideGallery = $('#slideGallery');
                         var foundSlide = slideGallery.find('li[id="slideImg_' + imgName + '"]');
                         if(foundSlide.length > 0)
-                        {   
+                        {
                             //if found remove it
                             foundSlide.remove();
                         } else {
