@@ -16,7 +16,7 @@ module.exports = function (grunt) {
 
 			// Files to be clean on rebuild
 			clean: {
-				all: ['<%= options.css.concat %>', '<%= options.css.min %>', '<%= options.less.compiled %>', '<%= options.sass.compiled %>', '<%= options.stylus.compiled %>', '<%= options.js.min %>', '<%= options.js.concat %>', '<%= options.less.compiled %>'],
+				all: ['<%= options.css.concat %>', '<%= options.css.min %>','<%= options.js.min %>', '<%= options.js.concat %>'],
 				concat: ['<%= options.css.concat %>', '<%= options.js.concat %>']
 			},
 
@@ -25,9 +25,9 @@ module.exports = function (grunt) {
 				base: 'assets/css',			 				// Base path to your CSS folder
 				files: ['assets/css/bootstrap.css',
 						'assets/css/bootstrap-responsive.css',
-						'assets/css/main.css',
 						'assets/css/admin.css',
-						'assets/css/dropzonejs.css'],							// CSS files in order you'd like them concatenated and minified
+						'assets/css/dropzonejs.css',
+						'assets/css/main.css'],							// CSS files in order you'd like them concatenated and minified
 				concat: '<%= options.css.base %>/concat.css',	// Name of the concatenated CSS file
 				min: '<%= options.publish %>/style.min.css'		// Name of the minified CSS file
 			},
@@ -42,27 +42,6 @@ module.exports = function (grunt) {
 						'assets/js/admin.js'],					// JavaScript files in order you'd like them concatenated and minified
 				concat: '<%= options.js.base %>/concat.js',		// Name of the concatenated JavaScript file
 				min: '<%= options.publish %>/script.min.js'		// Name of the minified JavaScript file
-			},
-
-			// LESS Settings
-			less: {
-				base: 'assets/less',							// Base path to you LESS folder
-				file: 'assets/less/main.less',							// LESS file (ideally, one file which contains imports)
-				compiled: '<%= options.css.base %>/less.css'	// Name of the compiled LESS file
-			},
-
-			// SASS Settings
-			sass: {
-				base: 'assets/sass',							// Base path to you SASS folder
-				file: 'assets/sass/main.sass',							// SASS file (ideally, one file which contains imports)
-				compiled: '<%= options.css.base %>/sass.css'	// Name of the compiled SASS file
-			},
-
-			// STYLUS Settings
-			stylus: {
-				base: 'assets/stylus',							// Base path to you STYLUS folder
-				file: 'assets/stylus/main.stylus',							// STYLUS file (ideally, one file which contains imports)
-				compiled: '<%= options.css.base %>/stylus.css'		// Name of the compiled STYLUS file
 			},
 
 			// Notification messages
@@ -133,37 +112,6 @@ module.exports = function (grunt) {
 			}
 		},
 
-		// Compile LESS files
-		less: {
-			main: {
-				options: {
-					yuicompress: true,
-					ieCompat: true
-				},
-				files: {
-					'<%= options.less.compiled %>': '<%= options.less.file %>'
-				}
-			}
-		},
-
-		// Compile SASS files
-		sass: {
-		    main: {
-		        files: {
-		        	'<%= options.sass.compiled %>': '<%= options.sass.file %>'
-		        }
-		    }
-		},
-
-		// Compile STYLUS files
-		stylus: {
-		    main: {
-		        files: {
-		        	'<%= options.stylus.compiled %>': '<%= options.stylus.file %>'
-		        }
-		    }
-		},
-
 		// Display notifications
 		notify: {
 			watch: {
@@ -203,9 +151,6 @@ module.exports = function (grunt) {
 	grunt.loadNpmTasks('grunt-contrib-concat');
 	grunt.loadNpmTasks('grunt-contrib-cssmin');
 	grunt.loadNpmTasks('grunt-contrib-jshint');
-	grunt.loadNpmTasks('grunt-contrib-less');
-	grunt.loadNpmTasks('grunt-contrib-sass');
-	grunt.loadNpmTasks('grunt-contrib-stylus');
 	grunt.loadNpmTasks('grunt-contrib-livereload');
 	grunt.loadNpmTasks('grunt-contrib-uglify');
 	grunt.loadNpmTasks('grunt-contrib-watch');
