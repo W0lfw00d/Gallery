@@ -111,11 +111,11 @@ h2 {
 	-ms-flex-align:center;
 
 	/* Firefox */
-	display:-moz-box;
+	/*display:-moz-box;
 	-moz-box-pack:center;
 	-moz-box-align:center;
 	-moz-box-orient: vertical;
-	-moz-box-direction: normal;
+	-moz-box-direction: normal; */
 	
 	/* Safari, Chrome, and Opera */
 	display:-webkit-box;
