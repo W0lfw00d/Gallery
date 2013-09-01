@@ -5,7 +5,8 @@ composer.lock
 .DS_Store
 /nbproject/private/
 /docs-master
+/node_modules
+
 /old
 /workspace
-
-/node_modules
+/.idea
