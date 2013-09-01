@@ -7,3 +7,5 @@ composer.lock
 /docs-master
 /old
 /workspace
+
+/node_modules

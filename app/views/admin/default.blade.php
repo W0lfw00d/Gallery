@@ -13,12 +13,9 @@
         </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-        {{ HTML::style('css/bootstrap.css') }}
-        {{ HTML::style('css/bootstrap-responsive.css') }}
-        {{ HTML::style('css/admin.css') }}
-        {{ HTML::style('css/dropzonejs.css') }}
+        {{ HTML::style('assets/style.min.css') }}
         <!--[if lt IE 10]> {{ HTML::style('css/ie.css') }} <![endif]-->
-        {{ HTML::script('js/vendor/modernizr-2.6.2-respond-1.1.0.min.js') }}
+        {{ HTML::script('assets/vendor/modernizr-2.6.2-respond-1.1.0.min.js') }}
         @yield('inline-style')
     </head>
     <body class="admin-content">
@@ -71,11 +68,8 @@
         </div>
 
         <script src='//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js'></script>
-        <script>window.jquery || document.write('<script src="/js/vendor/jquery-1.9.1.min.js"><\/script>')</script>
-
-        {{ HTML::script('js/vendor/bootstrap.min.js') }}
-        {{ HTML::script('js/vendor/ckeditor/ckeditor.js') }}
-        {{ HTML::script('js/plugins.js') }}
-        {{ HTML::script('js/admin.js') }}
+        <script>window.jquery || document.write('<script src="/assets/vendor/jquery-1.9.1.min.js"><\/script>')</script>
+        {{ HTML::script('assets/script.min.js') }}
+        {{ HTML::script('assets/vendor/ckeditor/ckeditor.js') }}
     </body>
 </html>
