@@ -1,9 +1,4 @@
-# Gallery
-=======
-
-## Gallery/Portfolio site
-
-
+# Gallery/Portfolio site
 
 ## Start up instructions:
 
