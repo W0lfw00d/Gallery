@@ -116,11 +116,13 @@ class GalleryAdminController extends \AdminController {
 		$imageLibrary = File::glob($directory.'/*[jpg|png|gif]');
 
 		//Put the currently used images in a nice searchable array
+		$currentImages = array();
 		$slides = $gallery->slides()->get();
 		for ($i=0; $i < sizeof($slides); $i++) { 
 			$currentImages[] = $slides[$i]->content;
 		}
 
+		$imageLibraryNew = arrray();
 		//Filter out the images currently used in the gallery
 		for ($i=0; $i < sizeof($imageLibrary); $i++) {
 			$baseName = pathinfo($imageLibrary[$i],PATHINFO_BASENAME);
