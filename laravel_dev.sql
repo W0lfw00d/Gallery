@@ -38,7 +38,7 @@ CREATE TABLE `galleries` (
   `id` int(255) unsigned NOT NULL AUTO_INCREMENT,
   `name` varchar(20) NOT NULL,
   `caption` varchar(100) NOT NULL,
-  `show_info` bit(1) NOT NULL DEFAULT b'1',
+  `show_info` tinyint(1) unsigned NOT NULL DEFAULT '1',
   `info` text NOT NULL,
   `category_id` int(255) NOT NULL,
   `updated_at` timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
