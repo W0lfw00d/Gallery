@@ -79,9 +79,10 @@ header {
 /* Logo */
 .logo {
 	padding-top: 10px;
-	width: 114px;
+	max-width: 325px;
 	height: 82px;
 	float: left;
+	text-align: center;
 	/*background-image: url(../img/logo.png);*/
 }
 .logo img {
@@ -388,7 +389,7 @@ a:hover.arrow-left , a:hover.arrow-right {
 	margin: 0 auto;
 	text-align: justify;
 	max-width: 800px;
-	width: 80%;
+	width: 60%;
 	padding-bottom: 20px;
 	padding-top: 5px;
 }
@@ -454,10 +455,10 @@ form {
 
 	.navbar-inverse .navbar-inner,
 	.logo {
-		height:40px;	
+		height:60px;	
 	} 
 	.logo {
-		width:56px;
+		max-width:767px;
 		padding: 5px auto;
 		padding-bottom: 0;
 		/*background-image: url(../img/logo_mobile.png);*/
