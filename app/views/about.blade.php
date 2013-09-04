@@ -6,10 +6,6 @@
 
 @section('content')
 	
-	@section('page_name')
-		{{ $page->name }}
-	@stop
-
 	@section('page_content')
 		{{ $page->content }}
 	@stop
