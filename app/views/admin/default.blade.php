@@ -13,7 +13,10 @@
         </title>
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width">
-        {{ HTML::style('assets/style.min.css') }}
+        {{ HTML::style('assets/admin/bootstrap.css') }}
+        {{ HTML::style('assets/admin/bootstrap-responsive.css') }}
+        {{ HTML::style('assets/admin/dropzonejs.css') }}
+        {{ HTML::style('assets/admin/admin.css') }}
         <!--[if lt IE 10]> {{ HTML::style('css/ie.css') }} <![endif]-->
         {{ HTML::script('assets/vendor/modernizr-2.6.2-respond-1.1.0.min.js') }}
         @yield('inline-style')
@@ -30,10 +33,10 @@
                         <nav class="navbar">
                             <ul class="unstyled">
                                 @section('category-menu')
-                                    <li>{{ HTML::link('admin/index','Index page')}}</li>
+                                    <li>{{ HTML::link('admin/index','Home page')}}</li>
                                     <li>{{ HTML::link('admin/theme','Theme')}}</li>
-                                    <li>{{ HTML::link('admin/category','Projects')}}</li>
-                                    <li class="option">{{ HTML::link('admin/gallery/create','+ Add Gallery')}}</li>
+                                    <li>{{ HTML::link('admin/category','Categories')}}</li>
+                                    <li class="option">{{ HTML::link('admin/gallery/create','+ Add project')}}</li>
                                     <ul>
                                         @foreach($siteData['categories'] as $category)
                                             <li>{{ HTML::link('admin/category/'.$category->id.'/edit',$category->name)}}</li>
@@ -44,7 +47,7 @@
                                             </ul>
                                         @endforeach
                                     </ul>
-                                    <li class="option">{{ HTML::link('admin/category/create','+ Add Project')}}</li>
+                                    <li class="option">{{ HTML::link('admin/category/create','+ Add category')}}</li>
                                 @show
                             @section('main-menu')
                                 <li>{{ HTML::link('admin/page/1/edit','About page')}}</li>

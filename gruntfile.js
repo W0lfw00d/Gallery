@@ -25,7 +25,6 @@ module.exports = function (grunt) {
 				base: 'assets/css',			 				// Base path to your CSS folder
 				files: ['assets/css/bootstrap.css',
 						'assets/css/bootstrap-responsive.css',
-						'assets/css/admin.css',
 						'assets/css/dropzonejs.css',
 						'assets/css/main.css'],							// CSS files in order you'd like them concatenated and minified
 				concat: '<%= options.css.base %>/concat.css',	// Name of the concatenated CSS file

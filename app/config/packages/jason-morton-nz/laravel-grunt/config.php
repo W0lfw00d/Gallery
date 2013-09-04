@@ -50,7 +50,6 @@ return array(
 		'assets/css/bootstrap.css',
 		'assets/css/bootstrap-responsive.css',
 		'assets/css/main.css',
-		'assets/css/admin.css',
 		'assets/css/dropzonejs.css',
 	),
 
