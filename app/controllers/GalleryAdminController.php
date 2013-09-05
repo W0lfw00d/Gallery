@@ -122,7 +122,7 @@ class GalleryAdminController extends \AdminController {
 			$currentImages[] = $slides[$i]->content;
 		}
 
-		$imageLibraryNew = arrray();
+		$imageLibraryNew = array();
 		//Filter out the images currently used in the gallery
 		for ($i=0; $i < sizeof($imageLibrary); $i++) {
 			$baseName = pathinfo($imageLibrary[$i],PATHINFO_BASENAME);
