@@ -321,6 +321,16 @@ a:hover.arrow-left , a:hover.arrow-right {
 	width: 5px;
 }
 
+.content-page.text {
+	padding-top: 20px;
+	height: 100%;
+}
+.content-page.text .swiper-wrapper {
+	height: 90%;
+}
+.content-page .swiper-scrollbar{
+	height: 90%;
+}
 .center-this {
 	height: 100%;
 	width:  100%;
