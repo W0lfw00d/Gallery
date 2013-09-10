@@ -327,6 +327,7 @@ a:hover.arrow-left , a:hover.arrow-right {
 }
 .content-page.text .swiper-wrapper {
 	height: 90%;
+	padding-bottom: 40px;
 }
 .content-page .swiper-scrollbar{
 	height: 90%;
