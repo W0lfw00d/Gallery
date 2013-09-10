@@ -2,7 +2,7 @@
 
 {{-- Web site Title --}}
 @section('title')
-	Gallery management | {{ $siteData['settings']['site_name'] }}
+	Project management | {{ $siteData['settings']['site_name'] }}
 @parent
 @stop
 
@@ -10,7 +10,7 @@
 @section('content')
 <div class="page-header">
 	<h3>
-		Gallery management
+		Project management
 
 		<div class="pull-right">
 			<a href="{{{ URL::to('admin/gallery/create') }}}" class="btn btn-small btn-info"><i class="icon-plus-sign icon-white"></i> Create</a>
@@ -22,8 +22,8 @@
 	<thead>
 		<tr>
 			<th class="span6">Title</th>
-			<!--th class="span2">Category</th-->
-			<th class="span4">Created at</th>
+			<!--th class="span2">Category</th>
+			<th class="span4">Created at</th-->
 			<th class="span1">Edit</th>
 			<th class="span1">Delete</th>
 		</tr>
@@ -33,8 +33,8 @@
 		<tr>
 			<td>{{ HTML::link('admin/gallery/' . $gallery->id . '/edit', $gallery->name ) }}</td>
 
-			<!--td>{{-- HTML::link('admin/category/' . $gallery->category->id . '/edit', $gallery->category->name ) --}}</td-->
-			<td>{{{ $gallery->created_at }}}</td>
+			<!--td>{{-- HTML::link('admin/category/' . $gallery->category->id . '/edit', $gallery->category->name ) --}}</td>
+			<td>{{{-- $gallery->created_at --}}}</td-->
 			<td>
 				<a href="{{{ URL::to('admin/gallery/' . $gallery->id . '/edit' ) }}}" class="btn btn-mini">Edit</a>
 			</td>

@@ -9,6 +9,7 @@ class ImageLibraryAdminController extends AdminController {
 
     private $imagine;
     private $sizes = array('','thumb','small','medium','large');
+
     public function __construct()
     {
         parent::__construct();

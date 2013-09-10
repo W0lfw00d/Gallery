@@ -40,9 +40,9 @@
 		<table class="table table-condensed table-hover table-edit">
 			<thead>
 				<tr>
-					<th class="span6">Galleries</th>
-					<!--th class="span2">Category</th-->
-					<th class="span4">Created at</th>
+					<th class="span6">Projects</th>
+					<!--th class="span2">Category</th>
+					<th class="span4">Created at</th-->
 					<th class="span1">Edit</th>
 					<th class="span1">Delete</th>
 				</tr>
@@ -52,8 +52,8 @@
 				<tr>
 					<td>{{ HTML::link('admin/gallery/' . $gallery->id . '/edit', $gallery->name ) }}</td>
 
-					<!--td>{{-- HTML::link('admin/category/' . $gallery->category->id . '/edit', $gallery->category->name ) --}}</td-->
-					<td>{{{ $gallery->created_at }}}</td>
+					<!--td>{{-- HTML::link('admin/category/' . $gallery->category->id . '/edit', $gallery->category->name ) --}}</td>
+					<td>{{{-- $gallery->created_at --}}}</td-->
 					<td>
 						<a href="{{{ URL::to('admin/gallery/' . $gallery->id . '/edit' ) }}}" class="btn btn-mini">Edit</a>
 					</td>
@@ -64,7 +64,7 @@
 				@endforeach
 				<tr>
 					<td colspan="4">
-						<a href="{{{ URL::to('admin/gallery/create') }}}" class="btn btn-small btn-info"><i class="icon-plus-sign icon-white"></i>Create Gallery</a>
+						<a href="{{{ URL::to('admin/gallery/create') }}}" class="btn btn-small btn-info"><i class="icon-plus-sign icon-white"></i>Create Project</a>
 						</td>
 				</tr>
 			</tbody>

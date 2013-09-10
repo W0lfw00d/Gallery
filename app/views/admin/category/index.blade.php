@@ -22,7 +22,7 @@
 	<thead>
 		<tr>
 			<th class="span6">Title</th>
-			<th class="span4">Created at</th>
+			<!--th class="span4">Created at</th-->
 			<th class="span1">Edit</th>
 			<th class="span1">Delete</th>
 		</tr>
@@ -31,7 +31,7 @@
 		@foreach ($categories as $category)
 		<tr>
 			<td>{{ HTML::link('admin/category/' . $category->id . '/edit', $category->name ) }}</td>
-			<td>{{{ $category->created_at }}}</td>
+			<!--td>{{{-- $category->created_at --}}}</td-->
 			<td>
 				<a href="{{{ URL::to('admin/category/' . $category->id . '/edit' ) }}}" class="btn btn-mini">Edit</a>
 			</td>

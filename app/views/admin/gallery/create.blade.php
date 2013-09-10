@@ -1,7 +1,7 @@
 @extends('admin/default')
 
 @section('pageTitle')
-	Create a new gallery | {{ $siteData['settings']['site_name'] }}
+	Create a new project | {{ $siteData['settings']['site_name'] }}
 @parent
 @stop
 
@@ -9,7 +9,7 @@
 @section('content')
 <div class="page-header">
 	<h3>
-		Create a new gallery
+		Create a new project
 
 		<div class="pull-right">
 			<a href="{{{ URL::to('admin/gallery') }}}" class="btn btn-small btn-inverse"><i class="icon-circle-arrow-left icon-white"></i> Back</a>

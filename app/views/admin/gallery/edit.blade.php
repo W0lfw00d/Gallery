@@ -1,14 +1,14 @@
 @extends('admin/default')
 
 @section('pageTitle')
-	Edit the gallery: '{{$gallery->name}}'| {{ $siteData['settings']['site_name'] }}
+	Edit the project: '{{$gallery->name}}'| {{ $siteData['settings']['site_name'] }}
 @parent
 @stop
 
 @section('content')
 <div class="page-header">
 	<h3>
-		Edit the gallery: '{{$gallery->name}}'
+		Edit the project: '{{$gallery->name}}'
 
 		<div class="pull-right">
 			<a href="{{{ URL::to('admin/category/'.$gallery->category_id.'/edit') }}}" class="btn btn-small btn-inverse"><i class="icon-circle-arrow-left icon-white"></i> Back</a>

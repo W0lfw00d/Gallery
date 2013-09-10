@@ -1,13 +1,13 @@
 @extends('admin/default')
 
 @section('pageTitle')
-	Edit the index page | {{ $siteData['settings']['site_name'] }}
+	Edit the home page | {{ $siteData['settings']['site_name'] }}
 	@parent
 @stop
 
 @section('content')
 <div class="page-header">
-	<h3>Index page overview</h3>
+	<h3>Home page overview</h3>
 </div>
 
 @include('admin.dropzone')

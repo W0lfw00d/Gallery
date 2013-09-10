@@ -29,7 +29,7 @@
 		@endif
 	</ul>
 
-	<h2>Foreground library</h2>
+	<h2>Home page foreground library</h2>
 	<ul class="thumbnails connected" id="deleteForegroundLibrary">
 		@if(is_array($foregroundLibrary))
 			@foreach($foregroundLibrary as $libImage)
@@ -42,7 +42,7 @@
 		@endif
 	</ul>
 
-	<h2>Background library</h2>
+	<h2>Home page background library</h2>
 	<ul class="thumbnails connected" id="deleteBackgroundLibrary">
 		@if(is_array($backgroundLibrary))
 			@foreach($backgroundLibrary as $libImage)
