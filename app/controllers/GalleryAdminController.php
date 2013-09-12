@@ -9,7 +9,7 @@ class GalleryAdminController extends \AdminController {
 	 */
 	public function index()
 	{
-		$galleries = Gallery::all();//->orderBy('category_id');
+		$galleries = Gallery::orderBy('order')->get();//->orderBy('category_id');
 		return View::make('admin/gallery/index')->with('galleries',$galleries);
 	}
 
@@ -20,7 +20,7 @@ class GalleryAdminController extends \AdminController {
 	 */
 	public function create()
 	{
-		$categories = Category::whereCategory_id(1)->lists('name', 'id');
+		$categories = Category::orderBy('order')->whereCategory_id(1)->lists('name', 'id');
 		//Show all avaliable images
 	    $directory = public_path().$this->settings['galleryUploadDir'];
 		$imageLibrary = File::glob($directory.'/*[jpg|png|gif]');
@@ -109,7 +109,7 @@ class GalleryAdminController extends \AdminController {
 	{
 		//Show the gallery 
 		$gallery = Gallery::findOrFail($id);
-		$categories = Category::whereCategory_id(1)->lists('name', 'id');
+		$categories = Category::orderBy('order')->whereCategory_id(1)->lists('name', 'id');
 		
 		//Get all avaliable images
 	    $directory = public_path().$this->settings['galleryUploadDir'];

@@ -9,7 +9,7 @@ class CategoryAdminController extends \AdminController {
 	 */
 	public function index()
 	{
-		$categories = Category::whereCategory_id(1)->get();
+		$categories = Category::whereCategory_id(1)->orderBy('order')->get();
 		return View::make('admin/category/index')->with('categories',$categories);
 	}
 

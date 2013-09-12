@@ -53,7 +53,7 @@ Route::get('/work/{category}', function($category)
 	if($category == null){
 		return Redirect::to('/');
 	}
-	$galleries = Gallery::whereCategory_id($category->id)->get();
+	$galleries = Gallery::whereCategory_id($category->id)->orderBy('order')->get();
 	
 	//TODO: what is this in L4? -> Section::inject('page_title', 'injection title');
 	//$test = Category::findOrFail(13);

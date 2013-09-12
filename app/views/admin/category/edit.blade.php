@@ -48,7 +48,7 @@
 				</tr>
 			</thead>
 			<tbody>
-				@foreach ($category->galleries()->get() as $gallery)
+				@foreach ($category->galleries()->orderBy('order')->get() as $gallery)
 				<tr>
 					<td>{{ HTML::link('admin/gallery/' . $gallery->id . '/edit', $gallery->name ) }}</td>
 
