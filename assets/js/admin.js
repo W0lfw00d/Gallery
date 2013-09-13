@@ -5,6 +5,11 @@ $(document).ready(function(){
         return confirm('Are you sure you want to delete this?') ? true : false;
     };
     $('.confirmDelete').click(deleteMe);
+    
+    //Enable the galleries to be sortable
+    $('#projectGallery').sortable({
+        handle: '.handle'
+    });
 
     //Add a current page marker to the navigation
     var url = window.location;

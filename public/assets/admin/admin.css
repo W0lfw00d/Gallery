@@ -249,3 +249,26 @@ a.thumbnail {
 	    text-align: center;
 	}
 }
+
+#projectGallery {
+	margin-bottom: 20px;
+	margin-left: 0;
+}
+
+#projectGallery li {
+	margin-left: 0;
+	padding: 2px 0;
+	height: 30px;
+	line-height: 30px;
+	border-bottom: 1px solid #999;
+	list-style: none;
+}
+#projectGallery li:not(:first-child):hover {
+	background-color: #999;
+}
+.list-header{
+	font-weight: bold;
+}
+.handle {
+	cursor: move;
+}

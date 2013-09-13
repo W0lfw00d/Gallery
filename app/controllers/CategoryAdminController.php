@@ -99,6 +99,7 @@ class CategoryAdminController extends \AdminController {
 		$name = Input::get('name');
 		$slug = Str::slug(Input::get('name'));
 		$gallery_ids = Input::get('gallery_ids');
+		$gallery_order_ids = Input::get('gallery_order_ids');
 
 		 // Declare the rules for the form validation
         $rules = array(
@@ -120,6 +121,18 @@ class CategoryAdminController extends \AdminController {
 				foreach ($gallery_ids as $gallery_id) {
 					if(is_numeric($gallery_id)){
 						Gallery::destroy($gallery_id);
+					}
+				}
+			}
+
+			//save the gallery order
+			if(is_array($gallery_order_ids)){
+				$i = 0;
+				foreach ($gallery_order_ids as $gallery_id) {
+					if(is_numeric($gallery_id)){
+						$gallery = Gallery::findOrFail($gallery_id);
+						$gallery->order = $i++;
+						$gallery->save();
 					}
 				}
 			}
