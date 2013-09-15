@@ -19,14 +19,14 @@
 $_CONFIG = array(
 
     'disabled' => false,
-    'denyZipDownload' => true,
-    'denyUpdateCheck' => true,
-    'denyExtensionRename' => true,
+    'denyZipDownload' => false,
+    'denyUpdateCheck' => false,
+    'denyExtensionRename' => false,
 
     'theme' => "oxygen",
 
-    'uploadURL' => "../../img/upload/other",
-    'uploadDir' => "",
+    'uploadURL' => "../../../img/upload",
+    'uploadDir' => "../../../img/upload",
 
     'dirPerms' => 0755,
     'filePerms' => 0644,
@@ -57,7 +57,7 @@ $_CONFIG = array(
         'flash'   =>  "swf",
         'images'  =>  "*img",
         'mimages'   => "*mime image/gif image/png image/jpeg",
-        'notimages' => "*mime ! image/gif image/png image/jpeg"
+        'notimages' => "*mime ! image/gif image/png image/jpeg",
 
         // TinyMCE types
         'file'    =>  "",
@@ -97,7 +97,7 @@ $_CONFIG = array(
 
     '_sessionVar' => &$_SESSION['KCFINDER'],
     //'_sessionLifetime' => 30,
-    //'_sessionDir' => "/full/directory/path",
+    '_sessionDir' => "D:/users/heyermaa/Dropbox/Dev/vagrant/laravel/app/storage/sessions",
 
     //'_sessionDomain' => ".mysite.com",
     //'_sessionPath' => "/my/path",

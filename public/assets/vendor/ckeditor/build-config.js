@@ -24,6 +24,7 @@ var CKBUILDER_CONFIG = {
 		'.mailmap'
 	],
 	plugins : {
+		'about' : 1,
 		'basicstyles' : 1,
 		'clipboard' : 1,
 		'toolbar' : 1,
@@ -31,31 +32,31 @@ var CKBUILDER_CONFIG = {
 		'entities' : 1,
 		'floatingspace' : 1,
 		'wysiwygarea' : 1,
-		'indent' : 1,
+		'indentlist' : 1,
 		'link' : 1,
-		'image' : 1,
 		'list' : 1,
 		'undo' : 1,
 		'dialog' : 1,
 		'dialogui' : 1,
 		'button' : 1,
+		'indent' : 1,
 		'fakeobjects' : 1,
+		'panelbutton' : 1,
 		'panel' : 1,
 		'floatpanel' : 1,
+		'colorbutton' : 1,
+		'popup' : 1,
+		'filebrowser' : 1,
 		'listblock' : 1,
 		'richcombo' : 1,
 		'font' : 1,
 		'justify' : 1,
-		'menu' : 1,
-		'contextmenu' : 1,
-		'liststyle' : 1,
+		'image' : 1,
+		'imagebrowser' : 1,
 		'preview' : 1,
-		'panelbutton' : 1,
-		'colorbutton' : 1,
-		'indentlist' : 1
+		'colordialog' : 1
 	},
 	languages : {
-		'nl' : 1,
 		'en' : 1,
 	}
 };

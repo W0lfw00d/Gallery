@@ -8,39 +8,35 @@ CKEDITOR.editorConfig = function( config ) {
 	// For the complete reference:
 	// http://docs.ckeditor.com/#!/api/CKEDITOR.config
 
-	//Integrate kcfinder
-	config.filebrowserBrowseUrl = 'ckeditor/kcfinder/browse.php?type=files&dir=img/upload/other&opener=ckeditor';
-   	config.filebrowserImageBrowseUrl = 'ckeditor/kcfinder/browse.php?type=images&dir=img/upload/other&opener=ckeditor';
-   	config.filebrowserFlashBrowseUrl = 'ckeditor/kcfinder/browse.php?type=flash&dir=img/upload/other&opener=ckeditor';
-   	config.filebrowserUploadUrl = 'ckeditor/kcfinder/upload.php?type=files&dir=img/upload/other&opener=ckeditor';
-   	config.filebrowserImageUploadUrl = 'ckeditor/kcfinder/upload.php?type=images&dir=img/upload/other&opener=ckeditor';
-   	config.filebrowserFlashUploadUrl = 'ckeditor/kcfinder/upload.php?type=flash&dir=img/upload/other&opener=ckeditor';
-
 	// The toolbar groups arrangement, optimized for a single toolbar row.
 	config.toolbarGroups = [
-		//{ name: 'document',	   groups: [ 'mode', 'document', 'doctools' ] },
-		//{ name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
-		//{ name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
+		{ name: 'document',	   groups: [ 'mode', 'document', 'doctools' ] },
+		{ name: 'clipboard',   groups: [ 'clipboard', 'undo' ] },
+		{ name: 'editing',     groups: [ 'find', 'selection', 'spellchecker' ] },
 		{ name: 'forms' },
 		{ name: 'basicstyles', groups: [ 'basicstyles', 'cleanup' ] },
 		{ name: 'paragraph',   groups: [ 'list', 'indent', 'blocks', 'align', 'bidi' ] },
-		{ name: 'links', groups: [ 'image'] },
+		{ name: 'links' },
 		{ name: 'insert' },
 		{ name: 'styles' },
-		{ name: 'image' },
-		{ name: 'colors' }/*,
-		{ name: 'tools' },
-		{ name: 'others' },
-		{ name: 'about' }*/
+		{ name: 'colors' },
+		//{ name: 'tools' },
+		//{ name: 'others' },
+		//{ name: 'about' }
 	];
-
 	config.width = '100%';
-	config.height = '380';
-	// The default plugins included in the basic setup define some buttons that
-	// we don't want too have in a basic editor. We remove them here.
-	config.removeButtons = 'Preview,Cut,Copy,Paste,Undo,Redo,Anchor,Underline,Strike,Subscript,Superscript';
+    config.height = '380';
+    // The default plugins included in the basic setup define some buttons that
+    // we don't want too have in a basic editor. We remove them here.
+    config.removeButtons = 'Preview,Cut,Copy,Paste,Undo,Redo,Anchor,Underline,Strike,Subscript,Superscript';
 
-	// Let's have it basic on dialogs as well.
-	config.removeDialogTabs = 'link:advanced';
+    // Let's have it basic on dialogs as well.
+    config.removeDialogTabs = 'image:advanced;link:advanced';
 
+ //Integrate kcfinder
+    config.filebrowserBrowseUrl = '/assets/vendor/kcfinder/browse.php?type=images';
+    config.filebrowserImageBrowseUrl = '/assets/vendor/kcfinder/browse.php?type=images&CKEditor=editor1&CKEditorFuncNum=2';
+    config.filebrowserImageBrowseLinkUrl = '/assets/vendor/kcfinder/browse.php?type=images&CKEditor=editor1&CKEditorFuncNum=2';
+    config.filebrowserUploadUrl = '/assets/vendor/kcfinder/upload.php?type=images';
+    config.filebrowserImageUploadUrl = '/assets/vendor/kcfinder/upload.php?type=images';
 };
