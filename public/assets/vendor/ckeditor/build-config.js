@@ -33,6 +33,7 @@ var CKBUILDER_CONFIG = {
 		'wysiwygarea' : 1,
 		'indent' : 1,
 		'link' : 1,
+		'image' : 1,
 		'list' : 1,
 		'undo' : 1,
 		'dialog' : 1,
@@ -50,7 +51,8 @@ var CKBUILDER_CONFIG = {
 		'liststyle' : 1,
 		'preview' : 1,
 		'panelbutton' : 1,
-		'colorbutton' : 1
+		'colorbutton' : 1,
+		'indentlist' : 1
 	},
 	languages : {
 		'nl' : 1,
