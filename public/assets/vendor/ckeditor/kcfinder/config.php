@@ -18,14 +18,14 @@
 
 $_CONFIG = array(
 
-    'disabled' => true,
-    'denyZipDownload' => false,
-    'denyUpdateCheck' => false,
-    'denyExtensionRename' => false,
+    'disabled' => false,
+    'denyZipDownload' => true,
+    'denyUpdateCheck' => true,
+    'denyExtensionRename' => true,
 
     'theme' => "oxygen",
 
-    'uploadURL' => "upload",
+    'uploadURL' => "../../img/upload/other",
     'uploadDir' => "",
 
     'dirPerms' => 0755,
@@ -56,6 +56,8 @@ $_CONFIG = array(
         'files'   =>  "",
         'flash'   =>  "swf",
         'images'  =>  "*img",
+        'mimages'   => "*mime image/gif image/png image/jpeg",
+        'notimages' => "*mime ! image/gif image/png image/jpeg"
 
         // TinyMCE types
         'file'    =>  "",
@@ -63,15 +65,15 @@ $_CONFIG = array(
         'image'   =>  "*img",
     ),
 
-    'filenameChangeChars' => array(/*
+    'filenameChangeChars' => array(
         ' ' => "_",
         ':' => "."
-    */),
+    ),
 
-    'dirnameChangeChars' => array(/*
+    'dirnameChangeChars' => array(
         ' ' => "_",
         ':' => "."
-    */),
+    ),
 
     'mime_magic' => "",
 
