@@ -136,6 +136,10 @@ h2 {
 	padding-bottom: 20px;
 }
 
+.text img {
+	margin: 0 6px;
+}
+
 .text-center {
 	padding-bottom: 20px;
 }

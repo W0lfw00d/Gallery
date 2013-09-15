@@ -406,6 +406,10 @@ a:hover.arrow-left , a:hover.arrow-right {
 	padding-top: 5px;
 }
 
+.text img {
+	margin: 0 6px;
+}
+
 .text-center {
 	padding-bottom: 20px;
 }
