@@ -441,6 +441,9 @@ form {
 		margin-right:0;
 		background-color: #FFF;
 	}
+	.navbar .nav-collapse .nav.pull-right {
+		border-color: white;
+	}
 	.nav-collapse.collapse > li,
 	.nav-collapse .nav > li > a,
 	.nav-collapse .nav > li > a:hover,
@@ -451,7 +454,8 @@ form {
 	}
 	.nav-collapse .nav > li > a,
   	.nav-collapse .dropdown-menu a {
-    	padding: 5px 35px;
+    	padding: 5px 25px 5px 35px;
+    	text-align: center;
     }
 	div.logo {
 		display: none;
