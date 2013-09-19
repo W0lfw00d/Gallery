@@ -8,8 +8,11 @@
 	<style type="text/css">
 	    html {
 		    /* This image will be displayed fullscreen */
-		    background:url('{{ Request::root().$siteData['settings']['backgroundUploadDir'].'/large/'.$siteData['settings']['indexBackground'] }}') no-repeat center center;
+		    background:url('{{ Request::root().$siteData['settings']['backgroundUploadDir'].'/large/'.$siteData['settings']['indexBackground'] }}') no-repeat center center fixed; 
 		    min-height:100%;
+			-webkit-background-size: cover;
+			-moz-background-size: cover;
+			-o-background-size: cover;
 		    background-size:cover; /*contain*/
 		}
 
@@ -17,6 +20,19 @@
 		    /* Workaround for some mobile browsers */
 		    min-height:100%;
 		    background-color: transparent;
+		}
+
+		@-moz-document url-prefix() {
+		  	.ff.center-this {
+				/* Firefox */
+				position: relative;
+			    display: -moz-box;
+			    top:inherit;
+			    bottom:inherit;
+			    -moz-box-pack: center;
+			    -moz-box-align: center;
+			    
+			}
 		}
 	</style>
 @stop
