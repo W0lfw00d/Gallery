@@ -95,7 +95,6 @@ class CategoryAdminController extends \AdminController {
 	 */
 	public function update($id)
 	{
-		
 		$name = Input::get('name');
 		$slug = Str::slug(Input::get('name'));
 		$gallery_ids = Input::get('gallery_ids');
@@ -115,16 +114,6 @@ class CategoryAdminController extends \AdminController {
 			$category->name = $name;
 			$category->slug = $slug;
 
-			//delete the selected galleries
-			if(is_array($gallery_ids)){
-
-				foreach ($gallery_ids as $gallery_id) {
-					if(is_numeric($gallery_id)){
-						Gallery::destroy($gallery_id);
-					}
-				}
-			}
-
 			//save the gallery order
 			if(is_array($gallery_order_ids)){
 				$i = 0;
@@ -137,16 +126,23 @@ class CategoryAdminController extends \AdminController {
 				}
 			}
 
+			//delete the selected galleries
+			if(is_array($gallery_ids)) {
+				foreach ($gallery_ids as $gallery_id) {
+					if(is_numeric($gallery_id)){
+						Gallery::destroy($gallery_id);
+					}
+				}
+			}
+
 			//check if it's saved
 			if($category->save()){
 				 // Redirect to the category list
             	return Redirect::to('admin/category')->with('success', 'The changes to category "'.$category->name.'" have been saved.');
             }
-
             // Redirect to the category edit page
             return Redirect::to('admin/category/'.$id.'/edit')->with('error', 'something went wrong :(');
         }
-
         // Form validation failed
         return Redirect::to('admin/category/'.$id.'/edit')->withInput()->withErrors($validator);
 	}
