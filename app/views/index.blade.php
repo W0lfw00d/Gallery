@@ -31,7 +31,9 @@
 			    bottom:inherit;
 			    -moz-box-pack: center;
 			    -moz-box-align: center;
-			    
+			}
+			.logo-index img {
+				max-width: 40%;
 			}
 		}
 	</style>
