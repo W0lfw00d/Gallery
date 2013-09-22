@@ -30,7 +30,7 @@
 			<label class="control-label" for="name">Category name</label>
 			<div class="controls">
 				<input type="text" name="name" id="name" value="{{{ Input::old('name') }}}" />
-				{{{ $errors->first('name', '<span class="help-inline">:message</span>') }}}
+				{{ $errors->first('name', '<span class="help-inline">:message</span>') }}
 			</div>
 		</div>
 		<!-- ./ post name -->

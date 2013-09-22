@@ -83,7 +83,7 @@ class GalleryAdminController extends \AdminController {
         }
 
         // Form validation failed
-        return Redirect::to('admin/category/'.$category_id.'/edit')->withInput()->withErrors($validator);
+        return Redirect::to('admin/gallery/create')->withInput()->withErrors($validator);
 	}
 
 	/**
