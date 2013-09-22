@@ -7,10 +7,10 @@ $(document).ready(function(){
     $('.confirmDelete').click(deleteMe);
     
     //Enable the galleries to be sortable
-    $('#projectGallery').sortable({
+    $('#categoryIndex, #projectGallery').sortable({
         handle: '.handle'
     });
-
+    
     //Add a current page marker to the navigation
     var url = window.location;
     $('.navbar a').filter(function() {

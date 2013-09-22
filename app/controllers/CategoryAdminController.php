@@ -162,9 +162,44 @@ class CategoryAdminController extends \AdminController {
 			Category::destroy($id);
 			//$category = Category::find($id);
     		//$category->delete();
-    		return Redirect::to('admin/category')->with('success','Category has been deleted');
+    		//return Redirect::to('admin/category')->with('success','Category has been deleted');
  		}
     	return Redirect::to('admin/category')->with('error','Category couldn\'t be deleted');
 	}
 
+
+	/**
+	 * Remove a category from storage and save the order of the others.
+	 *
+	 * @param  int_array  $category_ids
+	 * @param  int_array  $category_order_ids
+	 * @return Response
+	 */
+	public function postUpdateCategory()
+	{
+		$category_ids = Input::get('category_ids');
+		$category_order_ids = Input::get('category_order_ids');
+
+		//Save the category order
+		if(is_array($category_order_ids)){
+			$i = 0;
+			foreach ($category_order_ids as $category_id) {
+				if(is_numeric($category_id)){
+					$category = Category::findOrFail($category_id);
+					$category->order = $i++;
+					$category->save();
+				}
+			}
+		}
+
+		//delete the selected categories
+		if(is_array($category_ids)){
+			foreach ($category_ids as $category_id) {
+				if(is_numeric($category_id)){
+					Category::destroy($category_id);
+				}
+			}
+		}
+		return Redirect::to('admin/category')->with('success', 'The changes to the categories have been saved.');
+	}
 }

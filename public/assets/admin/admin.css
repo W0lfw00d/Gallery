@@ -254,11 +254,14 @@ a.thumbnail {
 	}
 }
 
-#projectGallery {
+#categoryIndex,
+#projectGallery
+ {
 	margin-bottom: 20px;
 	margin-left: 0;
 }
 
+#categoryIndex li,
 #projectGallery li {
 	margin-left: 0;
 	padding: 2px 0;
@@ -267,6 +270,7 @@ a.thumbnail {
 	border-bottom: 1px solid #999;
 	list-style: none;
 }
+#categoryIndex li:not(:first-child):hover,
 #projectGallery li:not(:first-child):hover {
 	background-color: #999;
 }

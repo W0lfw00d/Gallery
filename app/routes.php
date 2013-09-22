@@ -93,6 +93,7 @@ Route::get('/admin', function()
 {
 	return View::make('admin.login')->with('settings');
 });
+
 //process login
 Route::post('/admin', function()
 {
@@ -105,7 +106,6 @@ Route::post('/admin', function()
     	return Redirect::to('admin/category');
     }
    	return Redirect::to('admin');
- 
 });
 
 //Admin stuff
@@ -113,6 +113,7 @@ Route::group(array('prefix' => 'admin','before'=>'auth.basic'),function(){
 	Route::resource('index','IndexAdminController');
 	Route::resource('theme','ThemeAdminController');
 	Route::resource('category','CategoryAdminController');
+	Route::post('updateCategory', 'CategoryAdminController@postUpdateCategory');
 	Route::resource('gallery','GalleryAdminController');
 	Route::resource('page','PageAdminController');
 	Route::resource('settings','SettingsAdminController');
