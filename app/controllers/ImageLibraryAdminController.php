@@ -39,7 +39,9 @@ class ImageLibraryAdminController extends AdminController {
     {
         $input = Input::all();
         $rules = array(
-            'file' => 'image|max:3000',
+            //Can't check mimetype if --disable-fileinfo 
+            //'file' => 'image|max:3000',
+            'file' => 'max:3000',
         );
      
         $validation = Validator::make($input, $rules);
@@ -52,7 +54,7 @@ class ImageLibraryAdminController extends AdminController {
         $file = Input::file('file');
         $uploadDir = Input::get('uploadDir');
         $filename = $file->getClientOriginalName();
-        $directory = public_path().$this->settings[$uploadDir];
+        $directory = ltrim(public_path().$this->settings[$uploadDir],'/');
         $uploadSuccess = Input::file('file')->move($directory, $filename);
 
         if( $uploadSuccess ) {
@@ -80,6 +82,8 @@ class ImageLibraryAdminController extends AdminController {
     }
 
     private function deleteFile($file){
+        //For it to work in DataFlame hosting delete the left slash
+        $file = ltrim($file,'/');
         if(file_exists($file)){
             return unlink($file);
         }

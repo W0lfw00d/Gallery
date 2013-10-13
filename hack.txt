@@ -1,0 +1,24 @@
+Dir: .\vendor\laravel\framework\src\Illuminate\Filesystem\Filesystem.php
+
+Starting Line 207:
+	/**
+	 * Find path names matching a given pattern.
+	 *
+	 * @param  string  $pattern
+	 * @param  int     $flags
+	 * @return array
+	 */
+	public function glob($pattern, $flags = 0)
+	{
+		//On DataFlame shared hosting  glob doesn't work (--disable-fileinfo?)
+		$dir = ltrim(substr($pattern, 0, strrpos($pattern, '/') ),'/');
+		if ($handle = opendir($dir)) {
+            while (false !== ($entry = readdir($handle))) {
+                if(!is_dir($dir.'/'.$entry)){
+                    $files[] = $dir.'/'.$entry;
+                }
+            }
+        }
+        return $files;
+		//return glob($pattern, $flags);
+	}
