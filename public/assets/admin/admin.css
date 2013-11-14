@@ -156,6 +156,26 @@ form {
 .controls > input[type="password"] {
 	margin-left: 4px;
 }
+/* begin login page centering */
+.center-this input[type="text"],
+.center-this input[type="password"] {
+	text-align: center;
+}
+.center-this .controls {
+	margin-left: 0;
+	text-align: center;
+}
+.center-this .logo-index {
+	text-align: center;
+	max-width: none;
+	max-height: none;
+}
+.center-this .logo-index img {
+	max-width: 40%;
+	max-height: 40%;
+	padding-bottom: 15px;
+}
+/* end login page centering */
 .controls > input[type="reset"] {
 	margin-left: 160px;
 }
