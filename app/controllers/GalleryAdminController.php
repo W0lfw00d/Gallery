@@ -36,7 +36,7 @@ class GalleryAdminController extends \AdminController {
 	public function store()
 	{
 		$name = Input::get('name');
-		$info = Input::get('info');
+		$info = (get_magic_quotes_gpc()) ? stripslashes(Input::get('info')) : Input::get('info');
 		$caption = Input::get('caption');
 		$showInfo = Input::get('show-info')=="1" ? 1 : '';
 		$category_id = Input::get('category_id');

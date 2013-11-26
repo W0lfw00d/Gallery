@@ -22,7 +22,7 @@ class PageAdminController extends \AdminController {
 	public function update($id)
 	{
 		if(is_numeric($id)){
-			$content = Input::get('content');
+			$content = (get_magic_quotes_gpc()) ? stripslashes(Input::get('content')) : Input::get('content');
 			$page = Page::find($id);
 			$page->content = $content;
 			$page->save();
