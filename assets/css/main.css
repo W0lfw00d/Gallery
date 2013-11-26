@@ -56,7 +56,7 @@ header {
 	height: 82px;
 	z-index: 2;
 }
-.navbar-fixed-top .navbar-inner, .navbar-static-top .navbar-inner{	    
+.navbar-fixed-top .navbar-inner, .navbar-static-top .navbar-inner{
 	-webkit-box-shadow:none;
 	-moz-box-shadow:none;
     box-shadow:none;
@@ -457,6 +457,9 @@ form {
     	padding: 5px 25px 5px 35px;
     	text-align: center;
     }
+	li.dropdown:focus {
+		outline-color: transparent;
+	}
 	div.logo {
 		display: none;
 	}
