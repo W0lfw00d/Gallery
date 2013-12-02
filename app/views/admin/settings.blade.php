@@ -23,6 +23,26 @@
 				</div>
 			
 			@endfor
+			
+			<div class="control-group">
+				{{ Form::label('username', 'Username',array('class'=>'control-label')) }}
+				<div class="controls">
+				    <div class="input-prepend">
+					<span class="add-on"><i class="icon-wrench"></i></span>
+						{{ Form::text('username', $user->name, array('class' => 'input-xlarge')) }}
+					</div>
+				</div>
+			</div>
+
+			<div class="control-group">
+				{{ Form::label('password', 'Password',array('class'=>'control-label')) }}
+				<div class="controls">
+				    <div class="input-prepend">
+					<span class="add-on"><i class="icon-wrench"></i></span>
+						{{ Form::password('password', array('class' => 'input-xlarge')) }}
+					</div>
+				</div>
+			</div>
 
 			{{ Form::reset('Reset',array('class'=>'btn')) }}
 			{{ Form::submit('Save settings',array('class'=>'btn btn-success')) }}
