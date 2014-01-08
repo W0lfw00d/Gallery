@@ -54,9 +54,8 @@ class ImageLibraryAdminController extends AdminController {
         $file = Input::file('file');
         $uploadDir = Input::get('uploadDir');
         $filename = $file->getClientOriginalName();
-        $directory = ltrim(public_path().$this->settings[$uploadDir],'/');
+        $directory = public_path().$this->settings[$uploadDir];
         $uploadSuccess = Input::file('file')->move($directory, $filename);
-
         if( $uploadSuccess ) {
             $this->resize($directory, $filename, "thumb");
             $this->resize($directory, $filename, "small");

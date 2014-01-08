@@ -137,8 +137,8 @@ App::error(function(ModelNotFoundException $e)
     return Response::make('Not Found', 404);
 });
 
-//Event::listen('elequent.query',function($sql){
-//	//DB::getQueryLog();
-//	print_r($sql);
-//	die();
-//});
+// Display all SQL executed in Eloquent
+Event::listen('illuminate.query', function($query)
+{
+   // var_dump($query);
+});
