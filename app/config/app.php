@@ -107,6 +107,7 @@ return array(
         'Illuminate\View\ViewServiceProvider',
         'Illuminate\Workbench\WorkbenchServiceProvider',
 		'JasonNZ\LaravelGrunt\LaravelGruntServiceProvider',
+		'Barryvdh\Debugbar\ServiceProvider',
 	),
 
 	/*
