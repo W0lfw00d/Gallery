@@ -10,6 +10,6 @@ class Slide extends Eloquent {
 
 	public function gallery()
 	{
-		return $this->belongsTo('Gallery');
+		return $this->orderBy('order')->belongsTo('Gallery');
 	}
 }

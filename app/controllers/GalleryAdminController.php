@@ -132,7 +132,7 @@ class GalleryAdminController extends \AdminController {
 		}
 
 		return View::make('admin/gallery/edit')
-						->with(array('categories'=>$categories,'gallery'=>$gallery,'imageLibrary'=>$imageLibraryNew));
+						->with(array('categories'=>$categories,'gallery'=>$gallery,'slides'=>$slides,'imageLibrary'=>$imageLibraryNew));
 	}
 
 	/**

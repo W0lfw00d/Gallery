@@ -4,7 +4,7 @@ class Gallery extends Eloquent {
 
 	public function slides()
 	{
-		return $this->hasMany('Slide');
+		return $this->hasMany('Slide')->orderBy('order');
 	}
 
 	public function category()

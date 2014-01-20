@@ -27,7 +27,7 @@
 
 	<h2>Visible Gallery</h2>
 	<ul class="thumbnails connected" id="slideGallery">
-		@foreach($gallery->slides()->get() as $slide)
+		@foreach($slides as $slide)
 			@if($slide->contentType_id==1)
 				<li class="swap" id="slideImg_{{{ $slide->content }}}">
 				    <a href="#" class="thumbnail center-this">
