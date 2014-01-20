@@ -51,7 +51,8 @@
     					</ul>
     				</div><!--/.nav-collapse -->
 
-                    <a href="/work">
+                    <a href="/">
+                    <!-- this link needs to be come customizable -->
                         <div class="logo">
                             {{ HTML::image($siteData['settings']['logoUploadDir'].'/'.$siteData['settings']['logo']) }}
                         </div>
