@@ -378,6 +378,7 @@ a:hover.arrow-left , a:hover.arrow-right {
 
 .caption {
 	padding-top:2px;
+	white-space: pre;
 }
 .info {
 	width:100%;	
