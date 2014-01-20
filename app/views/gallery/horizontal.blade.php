@@ -23,9 +23,7 @@
       </div>
       @if ($gallery->caption != "")
         <section class="project_info">
-            <div class="caption">
-              <b>{{ $gallery->caption }}</b>
-            </div>
+            <div class="caption"><b>{{ $gallery->caption }}</b></div>
           @if ($gallery->show_info==1)
             <div class="info hide">
               <div class="info_content">
