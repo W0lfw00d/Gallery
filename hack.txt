@@ -11,6 +11,7 @@ Starting Line 207:
 	public function glob($pattern, $flags = 0)
 	{
 		//On DataFlame shared hosting  glob doesn't work (--disable-fileinfo?)
+		$files = array();
 		$dir = ltrim(substr($pattern, 0, strrpos($pattern, '/') ),'/');
 		if ($handle = opendir($dir)) {
             while (false !== ($entry = readdir($handle))) {
