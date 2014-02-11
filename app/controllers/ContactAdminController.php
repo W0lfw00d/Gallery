@@ -20,7 +20,7 @@ class PageAdminController extends \AdminController {
 	 */
 	public function store()
 	{
-		$content = Input::get('content');
+		$content = (get_magic_quotes_gpc()) ? stripslashes(Input::get('content')) : Input::get('content');
 		$page = Page::find(1);
 		$page->content = $content;
 		$page->save();

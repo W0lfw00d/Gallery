@@ -144,7 +144,7 @@ class GalleryAdminController extends \AdminController {
 	public function update($id)
 	{
 		$name = Input::get('name');
-		$info = Input::get('info');
+		$info = (get_magic_quotes_gpc()) ? stripslashes(Input::get('info')) : Input::get('info');
 		$showInfo = Input::get('show-info')=='1' ? 1 : '';
 		$caption = Input::get('caption');
 		$category_id = Input::get('category_id');
