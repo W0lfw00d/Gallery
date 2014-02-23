@@ -1,5 +1,5 @@
 module.exports = function (grunt) {
-	
+
 	// Initialize configuration object
 	grunt.initConfig({
 
@@ -36,6 +36,7 @@ module.exports = function (grunt) {
 				base: 'assets/js',							// Base path to you JS folder
 				files: ['assets/js/vendor/bootstrap.min.js',
 						'assets/js/vendor/idangerous.swiper-2.1.min.js',
+						'assets/js/vendor/screenfull.min.js',
 						'assets/js/plugins.js',
 						'assets/js/main.js',
 						'assets/js/admin.js'],					// JavaScript files in order you'd like them concatenated and minified

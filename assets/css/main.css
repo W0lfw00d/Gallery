@@ -127,13 +127,13 @@ header {
 	height: 100%;
 }
 .swiper-container, .swiper-wrapper {
-	 height: 100%; 
+	 height: 100%;
 }
 hr.buffer {
 	height: 10%;
 }
 
-/* Responsive Video 
+/* Responsive Video
 .video {
 	position: relative;
 	padding-bottom: 56.25%;
@@ -141,8 +141,8 @@ hr.buffer {
 	overflow: hidden;
 }
 
-.video iframe,  
-.video object,  
+.video iframe,
+.video object,
 .video embed {
 	position: absolute;
 	top: 0;
@@ -160,8 +160,8 @@ hr.buffer {
         width: 80%;
         margin: 0 auto;
 }
-.video-container iframe,  
-.video-container object,  
+.video-container iframe,
+.video-container object,
 .video-container embed {
 	position: absolute;
 	top: 0;
@@ -207,7 +207,8 @@ hr.buffer {
     padding:20px;
     z-index: 2;
 }
-a:hover.arrow-left , a:hover.arrow-right {
+a:hover.arrow-left , a:hover.arrow-right,
+a:hover.arrow-up , a:hover.arrow-down {
     text-decoration: none;
 }
 .arrow-left {
@@ -351,7 +352,7 @@ a:hover.arrow-left , a:hover.arrow-right {
 	display:-webkit-box;
 	-webkit-box-pack:center;
 	-webkit-box-align:center;
-	
+
 	/* W3C */
 	display:box;
 	box-pack:center;
@@ -361,7 +362,7 @@ a:hover.arrow-left , a:hover.arrow-right {
 	width: 100%;
 	text-align: center;
 	height: auto;/*10%*/
-	overflow-y:hidden; 
+	overflow-y:hidden;
 	clear:both;
 	margin:0 auto;
 	/* max-height: 70%; */
@@ -381,7 +382,7 @@ a:hover.arrow-left , a:hover.arrow-right {
 	white-space: pre;
 }
 .info {
-	width:100%;	
+	width:100%;
 	position: absolute;
 	bottom: 0;
 	z-index: 1;
@@ -397,6 +398,28 @@ a:hover.arrow-left , a:hover.arrow-right {
 	cursor: pointer;
 }
 
+#full-screen {
+	position: fixed;
+	bottom: 0;
+	width: 40px;
+	height: 40px;
+	z-index: 10000;
+	margin-left: 25px;
+}
+#vertical-nav {
+	position: fixed;
+	bottom: 0;
+	right: 0;
+	margin-right: 40px;
+	z-index: 10000;
+}
+
+#vertical-nav a {
+	float: right;
+	width: 40px;
+	height: 40px;
+	padding:10px;
+}
 /* text page */
 .text {
 	margin: 0 auto;
@@ -477,10 +500,16 @@ form {
         padding:10px;
     }
 
+    #full-screen {
+    	margin-left: 5px;
+    }
+    #vertical-nav a {
+    	width: 25px;
+    }
 	.navbar-inverse .navbar-inner,
 	.logo {
-		height:60px;	
-	} 
+		height:60px;
+	}
 	.logo {
 		max-width:767px;
 		padding: 5px auto;
