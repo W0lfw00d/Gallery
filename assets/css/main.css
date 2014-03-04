@@ -398,14 +398,6 @@ a:hover.arrow-up , a:hover.arrow-down {
 	cursor: pointer;
 }
 
-#full-screen {
-	position: fixed;
-	bottom: 0;
-	width: 40px;
-	height: 40px;
-	z-index: 10000;
-	margin-left: 25px;
-}
 #vertical-nav {
 	position: fixed;
 	bottom: 0;
@@ -498,10 +490,6 @@ form {
         width: 40px;
         height: 40px;
         padding:10px;
-    }
-
-    #full-screen {
-    	margin-left: 5px;
     }
     #vertical-nav a {
     	width: 25px;
