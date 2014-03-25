@@ -13,7 +13,7 @@ return array(
 	|
 	*/
 
-	'debug' => true,
+	'debug' => false,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -106,8 +106,8 @@ return array(
         'Illuminate\Validation\ValidationServiceProvider',
         'Illuminate\View\ViewServiceProvider',
         'Illuminate\Workbench\WorkbenchServiceProvider',
-		'JasonNZ\LaravelGrunt\LaravelGruntServiceProvider',
-		'Barryvdh\Debugbar\ServiceProvider',
+    		'JasonNZ\LaravelGrunt\LaravelGruntServiceProvider',
+    		'Barryvdh\Debugbar\ServiceProvider',
 	),
 
 	/*
@@ -173,7 +173,7 @@ return array(
         'URL'             => 'Illuminate\Support\Facades\URL',
         'Validator'       => 'Illuminate\Support\Facades\Validator',
         'View'            => 'Illuminate\Support\Facades\View',
-		'Grunt'			  => 'JasonNZ\LaravelGrunt\LaravelGruntServiceProvider',
+		    'Grunt'			  => 'JasonNZ\LaravelGrunt\LaravelGruntServiceProvider',
 	),
 
 );

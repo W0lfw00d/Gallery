@@ -6,7 +6,6 @@
 	"require": {
 		"laravel/framework": "4.1.*",
 		"way/generators": "dev-master",
-		"barryvdh/laravel-migration-generator": "dev-master",
 		"cartalyst/sentry": "2.0.*",
         "dflydev/markdown": "v1.0.2",
         "imagine/Imagine": "v0.4.1",
