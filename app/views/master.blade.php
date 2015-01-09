@@ -68,12 +68,17 @@
 
         {{ HTML::script('assets/script.min.js') }}
         {{ HTML::script('assets/vendor/idangerous.swiper.scrollbar-2.1.js') }}
- 
-        <!--script>
-            var _gaq=[['_setaccount','ua-xxxxx-x'],['_trackpageview']];
-            (function(d,t){var g=d.createelement(t),s=d.getelementsbytagname(t)[0];
-            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
-            s.parentnode.insertbefore(g,s)}(document,'script'));
-        </script-->
+
+        <!-- Google Analytics -->
+        <script>
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-XXXX-Y', 'auto');
+        ga('send', 'pageview');
+        </script>
+        <!-- End Google Analytics -->
     </body>
 </html>

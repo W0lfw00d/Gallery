@@ -74,7 +74,7 @@ class ImageLibraryAdminController extends AdminController {
         $directory = public_path().$this->settings[strtolower($data['type']).'UploadDir'];
         //delete all the different sizes from the files
         foreach ($this->sizes as $value) {
-            $this->deleteFile($directory.'/'.$value.'/'.$data['filename']);    
+            $this->deleteFile($directory.'/'.$value.'/'.$data['filename']);
         }
         Slide::whereContent($data['filename'])->delete();
         return Response::json('image deleted', 200);
